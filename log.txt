@@ -1,0 +1,324 @@
+Executing action: monitor
+Serial port /dev/ttyUSB0
+Connecting....
+Detecting chip type... Unsupported detection protocol, switching and trying again...
+Connecting.....
+Detecting chip type... ESP32
+Running idf_monitor in directory /home/t/Desktop/DO_AN/esp/freeRTOS
+Executing "/home/t/.espressif/python_env/idf6.0_py3.12_env/bin/python /home/t/Desktop/DO_AN/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/t/Desktop/DO_AN/esp/freeRTOS/build/freeRTOS.elf /home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader/bootloader.elf -m '/home/t/.espressif/python_env/idf6.0_py3.12_env/bin/python' '/home/t/Desktop/DO_AN/esp/esp-idf/tools/idf.py'"...
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3822-g27d68f57e6-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 22 2025 22:21:10[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00009000[0m
+[0;32mI (66) boot:  1 otadata          OTA data         01 00 00012000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 00014000 00001000[0m
+[0;32mI (79) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00120000 00100000[0m
+[0;32mI (92) boot:  5 ota_1            OTA app          00 11 00220000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) esp_image: segment 0: paddr=00120020 vaddr=3f400020 size=206bch (132796) map[0m
+[0;32mI (155) esp_image: segment 1: paddr=001406e4 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (155) esp_image: segment 2: paddr=0014070c vaddr=3ffb0000 size=03f40h ( 16192) load[0m
+I (165) esp_image: segment 3: paddr=00144654 vaddr=40080000 size=0b9c4h ( 47556) load
+[0;32mI (185) esp_image: segment 4: paddr=00150020 vaddr=400d0020 size=a4244h (672324) map[0m
+[0;32mI (415) esp_image: segment 5: paddr=001f426c vaddr=4008b9c4 size=0d764h ( 55140) load[0m
+[0;32mI (449) boot: Loaded app from partition at offset 0x120000[0m
+[0;32mI (449) boot: Disabling RNG early entropy source...[0m
+[0;32mI (460) cpu_start: Multicore app[0m
+[0;32mI (468) cpu_start: Pro cpu start user code[0m
+[0;32mI (468) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (468) app_init: Application information:[0m
+[0;32mI (468) app_init: Project name:     freeRTOS[0m
+[0;32mI (472) app_init: App version:      1[0m
+[0;32mI (475) app_init: Compile time:     May 22 2025 20:54:34[0m
+[0;32mI (480) app_init: ELF file SHA256:  51ff9f866...[0m
+[0;32mI (485) app_init: ESP-IDF:          v5.5-dev-3822-g27d68f57e6-dirty[0m
+[0;32mI (491) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (495) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (499) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (503) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (509) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (514) heap_init: At 3FFB86B0 len 00027950 (158 KiB): DRAM[0m
+[0;32mI (519) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (524) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (530) heap_init: At 40099128 len 00006ED8 (27 KiB): IRAM[0m
+[0;32mI (537) spi_flash: detected chip: generic[0m
+[0;32mI (539) spi_flash: flash io: dio[0m
+[0;33mW (542) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (553) main_task: Started on CPU0[0m
+[0;32mI (563) main_task: Calling app_main()[0m
+[0;32mI (583) SENSOR_TASK: Sensor Task Started[0m
+[0;32mI (583) SENSOR_TASK: Sensor: Temp = 28.3 C, Humidity = 64.3 %[0m
+[0;32mI (583) WIFI_TASK: WiFi Task Started. Initializing WiFi...[0m
+[0;32mI (593) MQTT_TASK: MQTT Task Started. Waiting for WiFi connection...[0m
+[0;32mI (593) NTP_TASK: Waiting for WiFi connection to start NTP sync...[0m
+[0;32mI (603) wifi:wifi driver task: 3ffc2478, prio:23, stack:6656, core=0[0m
+[0;32mI (623) wifi:wifi firmware version: 2db94317f5[0m
+[0;32mI (623) wifi:wifi certification version: v7.0[0m
+[0;32mI (623) wifi:config NVS flash: enabled[0m
+[0;32mI (623) wifi:config nano formatting: disabled[0m
+[0;32mI (623) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (633) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (633) wifi:Init management short buffer num: 32[0m
+[0;32mI (633) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (643) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (643) wifi:Init static rx buffer num: 10[0m
+[0;32mI (653) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (653) LCD_TASK: LCD Task Started[0m
+[0;32mI (653) wifi_init: rx ba win: 6[0m
+[0;32mI (663) wifi_init: accept mbox: 6[0m
+[0;32mI (663) LCD_TASK: Initializing LCD 1602A via I2C...[0m
+[0;32mI (663) wifi_init: tcpip mbox: 32[0m
+[0;32mI (673) LCD_TASK: I2C Master initialized.[0m
+[0;32mI (673) wifi_init: udp mbox: 6[0m
+[0;32mI (673) wifi_init: tcp mbox: 6[0m
+[0;32mI (683) wifi_init: tcp tx win: 5760[0m
+[0;32mI (683) wifi_init: tcp rx win: 5760[0m
+[0;32mI (683) wifi_init: tcp mss: 1440[0m
+[0;32mI (683) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (693) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (663) main_task: Returned from app_main()[0m
+[0;32mI (693) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (733) LCD_TASK: LCD Initialized.[0m
+[0;32mI (743) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (763) LCD_TASK: LCD Print: [0m
+[0;32mI (793) wifi:mode : sta (38:18:2b:ea:64:84)[0m
+[0;32mI (793) wifi:enable tsf[0m
+[0;32mI (793) WIFI_TASK: wifi_init_sta finished.[0m
+[0;32mI (803) WIFI_TASK: Attempting to connect to WiFi...[0m
+[0;32mI (813) wifi:new:<6,2>, old:<1,0>, ap:<255,255>, sta:<6,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (813) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (823) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (833) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (853) wifi:connected with SpaceX, aid = 3, channel 6, 40D, bssid = 1c:60:de:4f:69:b6[0m
+[0;32mI (853) wifi:security: WPA2-PSK, phy: bgn, rssi: -34[0m
+[0;32mI (853) wifi:pm start, type: 1[0m
+
+[0;32mI (853) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (873) wifi:<ba-add>idx:0 (ifx:0, 1c:60:de:4f:69:b6), tid:0, ssn:0, winSize:64[0m
+[0;32mI (893) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (993) wifi:<ba-add>idx:1 (ifx:0, 1c:60:de:4f:69:b6), tid:2, ssn:0, winSize:64[0m
+[0;32mI (1893) esp_netif_handlers: sta ip: 192.168.0.102, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1893) WIFI_TASK: Got IP:192.168.0.102[0m
+[0;32mI (1893) WIFI_TASK: WiFi Connected. Task can now suspend or periodically check status.[0m
+[0;32mI (1893) MQTT_TASK: WiFi connected. Initializing MQTT client...[0m
+[0;32mI (1893) NTP_TASK: WiFi connected. Starting NTP initialization.[0m
+[0;32mI (1903) MQTT_TASK: MQTT Client Started. URI: mqtt://test.mosquitto.org[0m
+[0;32mI (1903) MQTT_TASK: Other event id:7[0m
+[0;32mI (1913) MQTT_TASK: MQTT Task: Received Temp = 28.3 C, Humidity = 64.3 %[0m
+[0;32mI (1913) NTP_TASK: Initializing SNTP[0m
+[0;32mI (1933) NTP_TASK: Waiting for time to be set... (1/15)[0m
+[0;32mI (2763) LCD_TASK: LCD Cleared.[0m
+[0;32mI (2813) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (2833) LCD_TASK: LCD Print: [0m
+[0;32mI (2833) LCD_TASK: LCD Cursor set to R1, C0.[0m
+[0;32mI (2853) LCD_TASK: LCD Print: [0m
+[0;32mI (2853) LCD_TASK: LCD Updated: L1='T:0.0C H:0.0%', L2='WiFi: Connected '[0m
+[0;32mI (3933) NTP_TASK: Waiting for time to be set... (2/15)[0m
+[0;32mI (5583) SENSOR_TASK: Sensor: Temp = 26.2 C, Humidity = 62.9 %[0m
+[0;32mI (5853) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (5873) LCD_TASK: LCD Print: [0m
+[0;32mI (5873) LCD_TASK: LCD Cursor set to R1, C0.[0m
+[0;32mI (5893) LCD_TASK: LCD Print: [0m
+[0;32mI (5893) LCD_TASK: LCD Updated: L1='T:26.2C H:62.9%', L2='WiFi: Connected '[0m
+[0;32mI (5933) NTP_TASK: Waiting for time to be set... (3/15)[0m
+[0;32mI (6163) NTP_TASK: Time synchronized to: Thu May 22 15:40:45 2025[0m
+
+[0;32mI (6833) MQTT_TASK: MQTT_EVENT_CONNECTED[0m
+[0;32mI (6833) MQTT_TASK: Sent publish successful, msg_id=2560, data: {"temperature":28.3, "humidity":64.3}[0m
+[0;32mI (6843) MQTT_TASK: MQTT Task: Received Temp = 26.2 C, Humidity = 62.9 %[0m
+[0;32mI (6843) MQTT_TASK: Sent publish successful, msg_id=21226, data: {"temperature":26.2, "humidity":62.9}[0m
+[0;32mI (7933) NTP_TASK: Time synchronization successful.[0m
+[0;32mI (7933) NTP_TASK: Current time: Thu May 22 22:40:47 2025[0m
+[0;32mI (8363) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=2560[0m
+[0;32mI (8373) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=21226[0m
+[0;32mI (8943) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (8963) LCD_TASK: LCD Print: [0m
+[0;32mI (8963) LCD_TASK: LCD Cursor set to R1, C0.[0m
+[0;32mI (8993) LCD_TASK: LCD Print: [0m
+[0;32mI (8993) LCD_TASK: LCD Updated: L1='T:26.2C H:62.9%', L2='WiFi: Connected '[0m
+[0;32mI (10583) SENSOR_TASK: Sensor: Temp = 25.0 C, Humidity = 60.8 %[0m
+[0;32mI (10583) MQTT_TASK: MQTT Task: Received Temp = 25.0 C, Humidity = 60.8 %[0m
+[0;32mI (10583) MQTT_TASK: Sent publish successful, msg_id=1563, data: {"temperature":25.0, "humidity":60.8}[0m
+[0;32mI (11903) WIFI_TASK: WiFi Connected. Task can now suspend or periodically check status.[0m
+[0;32mI (11953) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=1563[0m
+[0;32mI (12043) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (12063) LCD_TASK: LCD Print: [0m
+[0;32mI (12063) LCD_TASK: LCD Cursor set to R1, C0.[0m
+[0;32mI (12083) LCD_TASK: LCD Print: [0m
+[0;32mI (12083) LCD_TASK: LCD Updated: L1='T:26.2C H:62.9%', L2='WiFi: Connected '[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3822-g27d68f57e6-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 22 2025 22:21:10[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00009000[0m
+[0;32mI (66) boot:  1 otadata          OTA data         01 00 00012000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 00014000 00001000[0m
+[0;32mI (79) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00120000 00100000[0m
+[0;32mI (92) boot:  5 ota_1            OTA app          00 11 00220000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) esp_image: segment 0: paddr=00120020 vaddr=3f400020 size=206bch (132796) map[0m
+[0;32mI (155) esp_image: segment 1: paddr=001406e4 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (155) esp_image: segment 2: paddr=0014070c vaddr=3ffb0000 size=03f40h ( 16192) load[0m
+[0;32mI (165) esp_image: segment 3: paddr=00144654 vaddr=40080000 size=0b9c4h ( 47556) load[0m
+[0;32mI (185) esp_image: segment 4: paddr=00150020 vaddr=400d0020 size=a4244h (672324) map[0m
+[0;32mI (415) esp_image: segment 5: paddr=001f426c vaddr=4008b9c4 size=0d764h ( 55140) load[0m
+[0;32mI (449) boot: Loaded app from partition at offset 0x120000[0m
+[0;32mI (449) boot: Disabling RNG early entropy source...[0m
+[0;32mI (460) cpu_start: Multicore app[0m
+[0;32mI (468) cpu_start: Pro cpu start user code[0m
+[0;32mI (468) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (468) app_init: Application information:[0m
+[0;32mI (468) app_init: Project name:     freeRTOS[0m
+[0;32mI (472) app_init: App version:      1[0m
+[0;32mI (475) app_init: Compile time:     May 22 2025 20:54:34[0m
+[0;32mI (480) app_init: ELF file SHA256:  51ff9f866...[0m
+[0;32mI (485) app_init: ESP-IDF:          v5.5-dev-3822-g27d68f57e6-dirty[0m
+[0;32mI (491) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (495) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (499) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (503) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (509) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (514) heap_init: At 3FFB86B0 len 00027950 (158 KiB): DRAM[0m
+[0;32mI (519) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (524) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (530) heap_init: At 40099128 len 00006ED8 (27 KiB): IRAM[0m
+[0;32mI (537) spi_flash: detected chip: generic[0m
+[0;32mI (539) spi_flash: flash io: dio[0m
+[0;33mW (542) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (553) main_task: Started on CPU0[0m
+[0;32mI (563) main_task: Calling app_main()[0m
+[0;32mI (583) SENSOR_TASK: Sensor Task Started[0m
+[0;32mI (583) SENSOR_TASK: Sensor: Temp = 28.3 C, Humidity = 64.3 %[0m
+[0;32mI (583) WIFI_TASK: WiFi Task Started. Initializing WiFi...[0m
+[0;32mI (593) MQTT_TASK: MQTT Task Started. Waiting for WiFi connection...[0m
+[0;32mI (593) NTP_TASK: Waiting for WiFi connection to start NTP sync...[0m
+[0;32mI (603) wifi:wifi driver task: 3ffc2478, prio:23, stack:6656, core=0[0m
+[0;32mI (623) wifi:wifi firmware version: 2db94317f5[0m
+[0;32mI (623) wifi:wifi certification version: v7.0[0m
+[0;32mI (623) wifi:config NVS flash: enabled[0m
+[0;32mI (623) wifi:config nano formatting: disabled[0m
+[0;32mI (623) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (633) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (633) wifi:Init management short buffer num: 32[0m
+[0;32mI (633) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (643) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (643) wifi:Init static rx buffer num: 10[0m
+[0;32mI (653) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (653) LCD_TASK: LCD Task Started[0m
+[0;32mI (653) wifi_init: rx ba win: 6[0m
+[0;32mI (663) wifi_init: accept mbox: 6[0m
+[0;32mI (663) LCD_TASK: Initializing LCD 1602A via I2C...[0m
+[0;32mI (663) wifi_init: tcpip mbox: 32[0m
+[0;32mI (673) LCD_TASK: I2C Master initialized.[0m
+[0;32mI (673) wifi_init: udp mbox: 6[0m
+[0;32mI (673) wifi_init: tcp mbox: 6[0m
+[0;32mI (683) wifi_init: tcp tx win: 5760[0m
+[0;32mI (683) wifi_init: tcp rx win: 5760[0m
+[0;32mI (683) wifi_init: tcp mss: 1440[0m
+[0;32mI (683) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (693) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (663) main_task: Returned from app_main()[0m
+[0;32mI (693) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (733) LCD_TASK: LCD Initialized.[0m
+[0;32mI (743) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (763) LCD_TASK: LCD Print: [0m
+[0;32mI (793) wifi:mode : sta (38:18:2b:ea:64:84)[0m
+[0;32mI (793) wifi:enable tsf[0m
+[0;32mI (793) WIFI_TASK: wifi_init_sta finished.[0m
+[0;32mI (793) WIFI_TASK: Attempting to connect to WiFi...[0m
+[0;32mI (803) wifi:new:<6,2>, old:<1,0>, ap:<255,255>, sta:<6,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (813) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (813) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (823) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (843) wifi:connected with SpaceX, aid = 3, channel 6, 40D, bssid = 1c:60:de:4f:69:b6[0m
+[0;32mI (843) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (843) wifi:pm start, type: 1[0m
+
+[0;32mI (843) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (863) wifi:<ba-add>idx:0 (ifx:0, 1c:60:de:4f:69:b6), tid:0, ssn:0, winSize:64[0m
+[0;32mI (873) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1893) esp_netif_handlers: sta ip: 192.168.0.102, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1893) WIFI_TASK: Got IP:192.168.0.102[0m
+[0;32mI (1893) MQTT_TASK: WiFi connected. Initializing MQTT client...[0m
+[0;32mI (1893) WIFI_TASK: WiFi Connected. Task can now suspend or periodically check status.[0m
+[0;32mI (1893) MQTT_TASK: MQTT Client Started. URI: mqtt://test.mosquitto.org[0m
+[0;32mI (1903) MQTT_TASK: Other event id:7[0m
+[0;32mI (1913) MQTT_TASK: MQTT Task: Received Temp = 28.3 C, Humidity = 64.3 %[0m
+[0;32mI (1893) NTP_TASK: WiFi connected. Starting NTP initialization.[0m
+[0;32mI (1923) NTP_TASK: Initializing SNTP[0m
+[0;32mI (1933) NTP_TASK: Waiting for time to be set... (1/15)[0m
+[0;32mI (1933) wifi:<ba-add>idx:1 (ifx:0, 1c:60:de:4f:69:b6), tid:6, ssn:0, winSize:64[0m
+[0;32mI (2053) NTP_TASK: Time synchronized to: Thu May 22 15:40:55 2025[0m
+
+[0;32mI (2763) LCD_TASK: LCD Cleared.[0m
+[0;32mI (2813) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (2833) LCD_TASK: LCD Print: [0m
+[0;32mI (2833) LCD_TASK: LCD Cursor set to R1, C0.[0m
+[0;32mI (2853) LCD_TASK: LCD Print: [0m
+[0;32mI (2853) LCD_TASK: LCD Updated: L1='T:0.0C H:0.0%', L2='WiFi: Connected '[0m
+[0;32mI (3933) NTP_TASK: Time synchronization successful.[0m
+[0;32mI (3933) NTP_TASK: Current time: Thu May 22 22:40:57 2025[0m
+[0;32mI (5583) SENSOR_TASK: Sensor: Temp = 26.2 C, Humidity = 62.9 %[0m
+[0;32mI (5853) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (5873) LCD_TASK: LCD Print: [0m
+[0;32mI (5873) LCD_TASK: LCD Cursor set to R1, C0.[0m
+[0;32mI (5903) LCD_TASK: LCD Print: [0m
+[0;32mI (5903) LCD_TASK: LCD Updated: L1='T:26.2C H:62.9%', L2='WiFi: Connected '[0m
+[0;32mI (8353) MQTT_TASK: MQTT_EVENT_CONNECTED[0m
+[0;32mI (8353) MQTT_TASK: Sent publish successful, msg_id=63944, data: {"temperature":28.3, "humidity":64.3}[0m
+[0;32mI (8353) MQTT_TASK: MQTT Task: Received Temp = 26.2 C, Humidity = 62.9 %[0m
+[0;32mI (8363) MQTT_TASK: Sent publish successful, msg_id=7093, data: {"temperature":26.2, "humidity":62.9}[0m
+[0;32mI (8953) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (8973) LCD_TASK: LCD Print: [0m
+[0;32mI (8973) LCD_TASK: LCD Cursor set to R1, C0.[0m
+[0;32mI (9003) LCD_TASK: LCD Print: [0m
+[0;32mI (9003) LCD_TASK: LCD Updated: L1='T:26.2C H:62.9%', L2='WiFi: Connected '[0m
+[0;32mI (9273) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=63944[0m
+[0;32mI (9273) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=7093[0m
+[0;32mI (10583) SENSOR_TASK: Sensor: Temp = 25.0 C, Humidity = 60.8 %[0m
+[0;32mI (10583) MQTT_TASK: MQTT Task: Received Temp = 25.0 C, Humidity = 60.8 %[0m
+[0;32mI (10583) MQTT_TASK: Sent publish successful, msg_id=52997, data: {"temperature":25.0, "humidity":60.8}[0m
+[0;32mI (11913) WIFI_TASK: WiFi Connected. Task can now suspend or periodically check status.[0m
+[0;32mI (12053) LCD_TASK: LCD Cursor set to R0, C0.[0m
+[0;32mI (12073) LCD_TASK: LCD Print: [0m
+[0;32mI (12073) LCD_TASK: LCD Cursor set to R1, C0.[0m
+[0;32mI (12093) LCD_TASK: LCD Print: [0m
+[0;32mI (12093) LCD_TASK: LCD Updated: L1='T:26.2C H:62.9%', L2='WiFi: Connected '[0m
+[0;32mI (12323) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=52997[0m

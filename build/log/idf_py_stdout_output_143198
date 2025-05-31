@@ -1,0 +1,483 @@
+Command: /home/t/.espressif/python_env/idf6.0_py3.12_env/bin/python /home/t/Desktop/DO_AN/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/t/Desktop/DO_AN/esp/freeRTOS/build/freeRTOS.elf /home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader/bootloader.elf -m '/home/t/.espressif/python_env/idf6.0_py3.12_env/bin/python' '/home/t/Desktop/DO_AN/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3822-g27d68f57e6-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 30 2025 08:02:07[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00009000[0m
+[0;32mI (66) boot:  1 otadata          OTA data         01 00 00012000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 00014000 00001000[0m
+[0;32mI (79) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00120000 00100000[0m
+[0;32mI (92) boot:  5 ota_1            OTA app          00 11 00220000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=20e98h (134808) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=00040ec0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00040ee8 vaddr=3ffb0000 size=03f10h ( 16144) load[0m
+I (169) esp_image: segment 3: paddr=00044e00 vaddr=40080000 size=0b218h ( 45592) load
+[0;32mI (189) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=a5a68h (678504) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000f5a90 vaddr=4008b218 size=0ce1ch ( 52764) load[0m
+[0;32mI (453) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (453) boot: Disabling RNG early entropy source...[0m
+[0;32mI (464) cpu_start: Multicore app[0m
+[0;32mI (472) cpu_start: Pro cpu start user code[0m
+[0;32mI (472) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (472) app_init: Application information:[0m
+[0;32mI (472) app_init: Project name:     freeRTOS[0m
+[0;32mI (476) app_init: App version:      1[0m
+[0;32mI (480) app_init: Compile time:     May 30 2025 08:02:00[0m
+[0;32mI (485) app_init: ELF file SHA256:  88725c4b7...[0m
+[0;32mI (489) app_init: ESP-IDF:          v5.5-dev-3822-g27d68f57e6-dirty[0m
+[0;32mI (495) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (499) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (503) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (507) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (513) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (518) heap_init: At 3FFB86D0 len 00027930 (158 KiB): DRAM[0m
+[0;32mI (523) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (529) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (534) heap_init: At 40098034 len 00007FCC (31 KiB): IRAM[0m
+[0;32mI (541) spi_flash: detected chip: generic[0m
+[0;32mI (543) spi_flash: flash io: dio[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (577) WIFI_MANAGER_TASK: Task Quan Ly Ket Noi da bat dau.[0m
+[0;32mI (577) app_main: Waiting for WiFi connection to be established by wifi_task...[0m
+[0;32mI (577) app_main: wifi_event_group detected. Waiting for WIFI_CONNECTED_BIT...[0m
+[0;32mI (587) wifi:wifi driver task: 3ffc1c48, prio:23, stack:6656, core=0[0m
+[0;32mI (607) wifi:wifi firmware version: 2db94317f5[0m
+[0;32mI (607) wifi:wifi certification version: v7.0[0m
+[0;32mI (607) wifi:config NVS flash: enabled[0m
+[0;32mI (607) wifi:config nano formatting: disabled[0m
+[0;32mI (617) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (617) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (617) wifi:Init management short buffer num: 32[0m
+[0;32mI (627) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (627) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (637) wifi:Init static rx buffer num: 10[0m
+[0;32mI (637) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (647) wifi_init: rx ba win: 6[0m
+[0;32mI (647) wifi_init: accept mbox: 6[0m
+[0;32mI (647) wifi_init: tcpip mbox: 32[0m
+[0;32mI (647) wifi_init: udp mbox: 6[0m
+[0;32mI (657) wifi_init: tcp mbox: 6[0m
+[0;32mI (657) wifi_init: tcp tx win: 5760[0m
+[0;32mI (657) wifi_init: tcp rx win: 5760[0m
+[0;32mI (667) wifi_init: tcp mss: 1440[0m
+[0;32mI (667) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (667) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (677) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (757) wifi:mode : sta (38:18:2b:ea:64:84)[0m
+[0;32mI (767) wifi:enable tsf[0m
+[0;32mI (767) WIFI_MANAGER_TASK: wifi_init_sta hoan tat.[0m
+[0;32mI (767) WIFI_MANAGER_TASK: Che do Station da khoi dong, bat dau ket noi WiFi...[0m
+[0;32mI (777) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (777) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (787) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (797) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (827) wifi:connected with HOANG PHONG, aid = 14, channel 1, BW20, bssid = 58:d3:12:e8:28:47[0m
+[0;32mI (827) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (827) wifi:pm start, type: 1[0m
+
+[0;32mI (827) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (837) wifi:<ba-add>idx:0 (ifx:0, 58:d3:12:e8:28:47), tid:0, ssn:2, winSize:64[0m
+[0;32mI (897) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4087) esp_netif_handlers: sta ip: 192.168.1.24, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4087) WIFI_MANAGER_TASK: Da ket noi WiFi va nhan duoc IP:192.168.1.24[0m
+[0;32mI (4087) app_main: WiFi Connected. Starting application tasks and OTA process.[0m
+[0;32mI (4097) SENSOR_TASK_DHT_ZORXX: Sensor Task (DHT11 - zorxx/dht) đã khởi động.[0m
+[0;32mI (4097) SENSOR_TASK_DHT_ZORXX: Sử dụng chân GPIO 4 cho DHT11.[0m
+[0;32mI (4107) SENSOR_TASK_DHT_ZORXX: Khoảng thời gian cập nhật cảm biến: 5000 ms.[0m
+[0;32mI (4137) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (4137) MQTT_TASK: MQTT Task Started. Waiting for WiFi connection...[0m
+[0;32mI (4147) MQTT_TASK: WiFi connected. Initializing MQTT client...[0m
+[0;32mI (4147) MQTT_TASK: Other event id:7[0m
+[0;32mI (4157) MQTT_TASK: MQTT Client Started. URI: mqtt://test.mosquitto.org[0m
+[0;32mI (4157) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;33mW (4167) MQTT_TASK: MQTT not connected. Skipping publish of: Temp 26.0C, Hum 81.0%[0m
+[0;32mI (4157) LCD_TASK: LCD Task Started[0m
+[0;32mI (4157) NTP_TASK: Dang cho WiFi ket noi de dong bo NTP...[0m
+[0;32mI (4177) LCD_TASK: Initializing LCD 1602A via I2C (New API)...[0m
+[0;32mI (4187) NTP_TASK: WiFi da ket noi. Bat dau khoi tao NTP.[0m
+[0;32mI (4157) app_main: app_main finished its setup. Tasks are running.[0m
+[0;32mI (4197) NTP_TASK: Initializing SNTP[0m
+[0;32mI (4207) NTP_TASK: Dang cho dong bo thoi gian... (1/15)[0m
+[0;32mI (4207) main_task: Returned from app_main()[0m
+[0;32mI (4237) LCD_TASK: LCD Initialized.[0m
+[0;32mI (4997) MQTT_TASK: MQTT_EVENT_CONNECTED[0m
+[0;32mI (6207) NTP_TASK: Dang cho dong bo thoi gian... (2/15)[0m
+[0;32mI (8207) NTP_TASK: Dang cho dong bo thoi gian... (3/15)[0m
+[0;32mI (9157) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (9157) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (9167) MQTT_TASK: Sent publish successful (queued), msg_id=26283, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (9607) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=26283[0m
+[0;32mI (10207) NTP_TASK: Dang cho dong bo thoi gian... (4/15)[0m
+[0;32mI (12207) NTP_TASK: Dang cho dong bo thoi gian... (5/15)[0m
+[0;32mI (14177) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (14177) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (14187) MQTT_TASK: Sent publish successful (queued), msg_id=60561, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (14207) NTP_TASK: Dang cho dong bo thoi gian... (6/15)[0m
+[0;32mI (14627) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=60561[0m
+[0;32mI (16207) NTP_TASK: Dang cho dong bo thoi gian... (7/15)[0m
+[0;32mI (18207) NTP_TASK: Dang cho dong bo thoi gian... (8/15)[0m
+[0;32mI (19197) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (19197) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (19207) MQTT_TASK: Sent publish successful (queued), msg_id=11798, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (19637) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=11798[0m
+[0;32mI (20207) NTP_TASK: Dang cho dong bo thoi gian... (9/15)[0m
+[0;32mI (22207) NTP_TASK: Dang cho dong bo thoi gian... (10/15)[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3822-g27d68f57e6-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 30 2025 08:02:07[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00009000[0m
+[0;32mI (66) boot:  1 otadata          OTA data         01 00 00012000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 00014000 00001000[0m
+[0;32mI (79) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00120000 00100000[0m
+[0;32mI (92) boot:  5 ota_1            OTA app          00 11 00220000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=20e98h (134808) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=00040ec0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00040ee8 vaddr=3ffb0000 size=03f10h ( 16144) load[0m
+[0;32mI (169) esp_image: segment 3: paddr=00044e00 vaddr=40080000 size=0b218h ( 45592) load[0m
+[0;32mI (189) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=a5a68h (678504) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000f5a90 vaddr=4008b218 size=0ce1ch ( 52764) load[0m
+[0;32mI (453) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (453) boot: Disabling RNG early entropy source...[0m
+[0;32mI (464) cpu_start: Multicore app[0m
+[0;32mI (472) cpu_start: Pro cpu start user code[0m
+[0;32mI (472) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (472) app_init: Application information:[0m
+[0;32mI (472) app_init: Project name:     freeRTOS[0m
+[0;32mI (476) app_init: App version:      1[0m
+[0;32mI (480) app_init: Compile time:     May 30 2025 08:02:00[0m
+[0;32mI (485) app_init: ELF file SHA256:  88725c4b7...[0m
+[0;32mI (489) app_init: ESP-IDF:          v5.5-dev-3822-g27d68f57e6-dirty[0m
+[0;32mI (495) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (499) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (503) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (507) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (513) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (518) heap_init: At 3FFB86D0 len 00027930 (158 KiB): DRAM[0m
+[0;32mI (523) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (529) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (534) heap_init: At 40098034 len 00007FCC (31 KiB): IRAM[0m
+[0;32mI (541) spi_flash: detected chip: generic[0m
+[0;32mI (543) spi_flash: flash io: dio[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (577) WIFI_MANAGER_TASK: Task Quan Ly Ket Noi da bat dau.[0m
+[0;32mI (577) app_main: Waiting for WiFi connection to be established by wifi_task...[0m
+[0;32mI (577) app_main: wifi_event_group detected. Waiting for WIFI_CONNECTED_BIT...[0m
+[0;32mI (587) wifi:wifi driver task: 3ffc1c48, prio:23, stack:6656, core=0[0m
+[0;32mI (607) wifi:wifi firmware version: 2db94317f5[0m
+[0;32mI (607) wifi:wifi certification version: v7.0[0m
+[0;32mI (607) wifi:config NVS flash: enabled[0m
+[0;32mI (607) wifi:config nano formatting: disabled[0m
+[0;32mI (617) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (617) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (617) wifi:Init management short buffer num: 32[0m
+[0;32mI (627) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (627) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (637) wifi:Init static rx buffer num: 10[0m
+[0;32mI (637) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (647) wifi_init: rx ba win: 6[0m
+[0;32mI (647) wifi_init: accept mbox: 6[0m
+[0;32mI (647) wifi_init: tcpip mbox: 32[0m
+[0;32mI (647) wifi_init: udp mbox: 6[0m
+[0;32mI (657) wifi_init: tcp mbox: 6[0m
+[0;32mI (657) wifi_init: tcp tx win: 5760[0m
+[0;32mI (657) wifi_init: tcp rx win: 5760[0m
+[0;32mI (667) wifi_init: tcp mss: 1440[0m
+[0;32mI (667) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (667) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (677) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (757) wifi:mode : sta (38:18:2b:ea:64:84)[0m
+[0;32mI (767) wifi:enable tsf[0m
+[0;32mI (767) WIFI_MANAGER_TASK: wifi_init_sta hoan tat.[0m
+[0;32mI (767) WIFI_MANAGER_TASK: Che do Station da khoi dong, bat dau ket noi WiFi...[0m
+[0;32mI (777) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (777) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (787) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (797) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (827) wifi:connected with HOANG PHONG, aid = 14, channel 1, BW20, bssid = 58:d3:12:e8:28:47[0m
+[0;32mI (827) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (827) wifi:pm start, type: 1[0m
+
+[0;32mI (827) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (837) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (847) wifi:<ba-add>idx:0 (ifx:0, 58:d3:12:e8:28:47), tid:0, ssn:2, winSize:64[0m
+[0;32mI (4197) esp_netif_handlers: sta ip: 192.168.1.24, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4197) WIFI_MANAGER_TASK: Da ket noi WiFi va nhan duoc IP:192.168.1.24[0m
+[0;32mI (4197) app_main: WiFi Connected. Starting application tasks and OTA process.[0m
+[0;32mI (4207) SENSOR_TASK_DHT_ZORXX: Sensor Task (DHT11 - zorxx/dht) đã khởi động.[0m
+[0;32mI (4207) SENSOR_TASK_DHT_ZORXX: Sử dụng chân GPIO 4 cho DHT11.[0m
+[0;32mI (4217) SENSOR_TASK_DHT_ZORXX: Khoảng thời gian cập nhật cảm biến: 5000 ms.[0m
+[0;32mI (4247) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (4247) MQTT_TASK: MQTT Task Started. Waiting for WiFi connection...[0m
+[0;32mI (4257) MQTT_TASK: WiFi connected. Initializing MQTT client...[0m
+[0;32mI (4257) MQTT_TASK: Other event id:7[0m
+[0;32mI (4267) MQTT_TASK: MQTT Client Started. URI: mqtt://test.mosquitto.org[0m
+[0;32mI (4267) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (4267) LCD_TASK: LCD Task Started[0m
+[0;33mW (4277) MQTT_TASK: MQTT not connected. Skipping publish of: Temp 26.0C, Hum 81.0%[0m
+[0;32mI (4277) LCD_TASK: Initializing LCD 1602A via I2C (New API)...[0m
+[0;32mI (4267) NTP_TASK: Dang cho WiFi ket noi de dong bo NTP...[0m
+[0;32mI (4267) app_main: app_main finished its setup. Tasks are running.[0m
+[0;32mI (4297) NTP_TASK: WiFi da ket noi. Bat dau khoi tao NTP.[0m
+[0;32mI (4307) NTP_TASK: Initializing SNTP[0m
+[0;32mI (4317) NTP_TASK: Dang cho dong bo thoi gian... (1/15)[0m
+[0;32mI (4317) main_task: Returned from app_main()[0m
+[0;32mI (4347) LCD_TASK: LCD Initialized.[0m
+[0;32mI (5447) MQTT_TASK: MQTT_EVENT_CONNECTED[0m
+[0;32mI (5597) NTP_TASK: Thoi gian da dong bo: Fri May 30 01:03:43 2025[0m
+
+[0;32mI (6317) NTP_TASK: Dong bo thoi gian thanh cong.[0m
+[0;32mI (6317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:03:43 2025[0m
+[0;32mI (9267) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (9267) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (9277) MQTT_TASK: Sent publish successful (queued), msg_id=17187, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (9747) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=17187[0m
+[0;32mI (14287) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (14287) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (14297) MQTT_TASK: Sent publish successful (queued), msg_id=25475, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (14767) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=25475[0m
+[0;32mI (19307) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (19307) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (19317) MQTT_TASK: Sent publish successful (queued), msg_id=28602, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (19787) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=28602[0m
+[0;32mI (24327) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (24327) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (24337) MQTT_TASK: Sent publish successful (queued), msg_id=28441, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (24807) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=28441[0m
+[0;32mI (29347) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (29347) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (29357) MQTT_TASK: Sent publish successful (queued), msg_id=19575, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (29817) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=19575[0m
+[0;32mI (34367) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (34367) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (34377) MQTT_TASK: Sent publish successful (queued), msg_id=38060, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (34837) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=38060[0m
+[0;32mI (36317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:04:13 2025[0m
+[0;32mI (39387) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (39387) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (39397) MQTT_TASK: Sent publish successful (queued), msg_id=31826, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (39857) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=31826[0m
+[0;32mI (44407) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (44407) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (44417) MQTT_TASK: Sent publish successful (queued), msg_id=12932, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (44877) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=12932[0m
+[0;32mI (49427) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (49427) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (49437) MQTT_TASK: Sent publish successful (queued), msg_id=60786, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (49887) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=60786[0m
+[0;32mI (54447) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (54447) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (54457) MQTT_TASK: Sent publish successful (queued), msg_id=56167, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (54907) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=56167[0m
+[0;32mI (59467) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (59467) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (59477) MQTT_TASK: Sent publish successful (queued), msg_id=35936, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (59927) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=35936[0m
+[0;32mI (64487) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (64487) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (64497) MQTT_TASK: Sent publish successful (queued), msg_id=55782, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (64947) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=55782[0m
+[0;32mI (66317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:04:43 2025[0m
+[0;32mI (69507) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (69507) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (69517) MQTT_TASK: Sent publish successful (queued), msg_id=19697, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (69957) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=19697[0m
+[0;32mI (74527) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (74527) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (74537) MQTT_TASK: Sent publish successful (queued), msg_id=38743, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (74977) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=38743[0m
+[0;32mI (79547) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (79547) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (79557) MQTT_TASK: Sent publish successful (queued), msg_id=60108, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (79997) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=60108[0m
+[0;32mI (84567) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (84567) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (84577) MQTT_TASK: Sent publish successful (queued), msg_id=40072, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (85017) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=40072[0m
+[0;32mI (89587) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (89587) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (89597) MQTT_TASK: Sent publish successful (queued), msg_id=50012, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (90037) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=50012[0m
+[0;32mI (94607) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (94607) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (94617) MQTT_TASK: Sent publish successful (queued), msg_id=49, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (95047) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=49[0m
+[0;32mI (96317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:05:13 2025[0m
+[0;32mI (99627) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (99627) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (99637) MQTT_TASK: Sent publish successful (queued), msg_id=40152, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (100067) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=40152[0m
+[0;32mI (104647) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (104647) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (104657) MQTT_TASK: Sent publish successful (queued), msg_id=29405, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (105087) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=29405[0m
+[0;32mI (109667) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (109667) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (109677) MQTT_TASK: Sent publish successful (queued), msg_id=49570, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (110107) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=49570[0m
+[0;32mI (114687) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (114687) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (114697) MQTT_TASK: Sent publish successful (queued), msg_id=59289, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (115117) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=59289[0m
+[0;32mI (119707) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (119707) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (119717) MQTT_TASK: Sent publish successful (queued), msg_id=53144, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (120137) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=53144[0m
+[0;32mI (124727) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (124727) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (124737) MQTT_TASK: Sent publish successful (queued), msg_id=10714, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (125157) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=10714[0m
+[0;32mI (126317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:05:43 2025[0m
+[0;32mI (129747) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (129747) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (129757) MQTT_TASK: Sent publish successful (queued), msg_id=41641, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (130177) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=41641[0m
+[0;32mI (134767) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (134767) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (134777) MQTT_TASK: Sent publish successful (queued), msg_id=55787, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (135187) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=55787[0m
+[0;32mI (139787) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (139787) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (139797) MQTT_TASK: Sent publish successful (queued), msg_id=42266, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (140207) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=42266[0m
+[0;32mI (144807) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (144807) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (144817) MQTT_TASK: Sent publish successful (queued), msg_id=45162, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (145227) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=45162[0m
+[0;32mI (149827) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (149827) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (149837) MQTT_TASK: Sent publish successful (queued), msg_id=52783, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (150247) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=52783[0m
+[0;32mI (154847) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (154847) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (154857) MQTT_TASK: Sent publish successful (queued), msg_id=6908, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (155257) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=6908[0m
+[0;32mI (156317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:06:13 2025[0m
+[0;32mI (159867) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (159867) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (159877) MQTT_TASK: Sent publish successful (queued), msg_id=40786, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (160277) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=40786[0m
+[0;32mI (164887) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (164887) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (164897) MQTT_TASK: Sent publish successful (queued), msg_id=1069, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (165297) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=1069[0m
+[0;32mI (169907) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (169907) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (169917) MQTT_TASK: Sent publish successful (queued), msg_id=52025, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (170317) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=52025[0m
+[0;32mI (174927) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (174927) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (174937) MQTT_TASK: Sent publish successful (queued), msg_id=15149, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (175337) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=15149[0m
+[0;32mI (179947) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (179947) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (179957) MQTT_TASK: Sent publish successful (queued), msg_id=5292, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (180347) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=5292[0m
+[0;32mI (184967) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (184967) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (184977) MQTT_TASK: Sent publish successful (queued), msg_id=17040, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (185367) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=17040[0m
+[0;32mI (186317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:06:43 2025[0m
+[0;32mI (189987) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (189987) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (189997) MQTT_TASK: Sent publish successful (queued), msg_id=81, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (190387) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=81[0m
+[0;32mI (195007) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (195007) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (195017) MQTT_TASK: Sent publish successful (queued), msg_id=64666, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (195407) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=64666[0m
+[0;32mI (200027) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (200027) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (200037) MQTT_TASK: Sent publish successful (queued), msg_id=24454, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (200417) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=24454[0m
+[0;32mI (205047) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (205047) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (205057) MQTT_TASK: Sent publish successful (queued), msg_id=7242, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (205437) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=7242[0m
+[0;32mI (210067) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (210067) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (210077) MQTT_TASK: Sent publish successful (queued), msg_id=49508, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (210457) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=49508[0m
+[0;32mI (215087) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (215087) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (215097) MQTT_TASK: Sent publish successful (queued), msg_id=11263, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (215577) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=11263[0m
+[0;32mI (216317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:07:13 2025[0m
+[0;32mI (220107) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (220107) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (220117) MQTT_TASK: Sent publish successful (queued), msg_id=26686, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (220597) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=26686[0m
+[0;32mI (225127) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (225127) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (225137) MQTT_TASK: Sent publish successful (queued), msg_id=32758, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (225607) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=32758[0m
+[0;32mI (230147) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (230147) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (230157) MQTT_TASK: Sent publish successful (queued), msg_id=94, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (230627) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=94[0m
+[0;32mI (235167) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (235167) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (235177) MQTT_TASK: Sent publish successful (queued), msg_id=178, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (235647) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=178[0m
+[0;32mI (240187) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (240187) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (240197) MQTT_TASK: Sent publish successful (queued), msg_id=45181, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (240667) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=45181[0m
+[0;32mI (245207) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (245207) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (245217) MQTT_TASK: Sent publish successful (queued), msg_id=5468, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (245677) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=5468[0m
+[0;32mI (246317) NTP_TASK: Thoi gian hien tai: Fri May 30 08:07:43 2025[0m
+[0;32mI (250227) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (250227) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (250237) MQTT_TASK: Sent publish successful (queued), msg_id=36404, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (250697) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=36404[0m
+[0;32mI (255247) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (255247) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (255257) MQTT_TASK: Sent publish successful (queued), msg_id=37619, data: {"temperature":26.0, "humidity":81.0}[0m
+[0;32mI (255717) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=37619[0m
+[0;32mI (260267) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 26.0 C, Độ ẩm = 81.0 %[0m
+[0;32mI (260267) MQTT_TASK: MQTT Task: Received Temp = 26.0 C, Humidity = 81.0 %[0m
+[0;32mI (260277) MQTT_TASK: Sent publish successful (queued), msg_id=48032, data: {"temperature":26.0, "humidity":81.0}[0m

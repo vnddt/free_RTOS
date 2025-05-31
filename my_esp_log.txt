@@ -1,0 +1,127 @@
+Executing action: monitor
+Running idf_monitor in directory /home/t/Desktop/DO_AN/esp/freeRTOS
+Executing "/home/t/.espressif/python_env/idf6.0_py3.12_env/bin/python /home/t/Desktop/DO_AN/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/t/Desktop/DO_AN/esp/freeRTOS/build/freeRTOS.elf /home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader/bootloader.elf -m '/home/t/.espressif/python_env/idf6.0_py3.12_env/bin/python' '/home/t/Desktop/DO_AN/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'"...
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3822-g27d68f57e6-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time May 29 2025 18:01:56[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00009000[0m
+[0;32mI (66) boot:  1 otadata          OTA data         01 00 00012000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 00014000 00001000[0m
+[0;32mI (79) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00120000 00100000[0m
+[0;32mI (92) boot:  5 ota_1            OTA app          00 11 00220000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=1f7a8h (128936) map[0m
+[0;32mI (158) esp_image: segment 1: paddr=0003f7d0 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (158) esp_image: segment 2: paddr=0003f7f8 vaddr=3ffb0000 size=00820h (  2080) load[0m
+[0;32mI (162) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a2414h (664596) map[0m
+[0;32mI (396) esp_image: segment 4: paddr=000e243c vaddr=3ffb0820 size=036f0h ( 14064) load[0m
+[0;32mI (401) esp_image: segment 5: paddr=000e5b34 vaddr=40080000 size=17cfch ( 97532) load[0m
+[0;32mI (451) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (451) boot: Disabling RNG early entropy source...[0m
+[0;32mI (462) cpu_start: Multicore app[0m
+[0;32mI (470) cpu_start: Pro cpu start user code[0m
+[0;32mI (470) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (470) app_init: Application information:[0m
+[0;32mI (470) app_init: Project name:     freeRTOS[0m
+[0;32mI (474) app_init: App version:      1[0m
+[0;32mI (478) app_init: Compile time:     May 29 2025 18:01:49[0m
+[0;32mI (483) app_init: ELF file SHA256:  0aa7133ed...[0m
+[0;32mI (487) app_init: ESP-IDF:          v5.5-dev-3822-g27d68f57e6-dirty[0m
+[0;32mI (493) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (497) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (501) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (505) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (511) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (516) heap_init: At 3FFB8680 len 00027980 (158 KiB): DRAM[0m
+[0;32mI (521) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (527) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (532) heap_init: At 40097CFC len 00008304 (32 KiB): IRAM[0m
+[0;32mI (539) spi_flash: detected chip: generic[0m
+[0;32mI (541) spi_flash: flash io: dio[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (575) WIFI_TASK: WiFi Task Started. Initializing WiFi...[0m
+[0;32mI (575) app_main: Waiting for WiFi connection to be established by wifi_task...[0m
+[0;32mI (575) app_main: wifi_event_group detected. Waiting for WIFI_CONNECTED_BIT...[0m
+[0;32mI (585) wifi:wifi driver task: 3ffc1ba0, prio:23, stack:6656, core=0[0m
+[0;32mI (605) wifi:wifi firmware version: 2db94317f5[0m
+[0;32mI (605) wifi:wifi certification version: v7.0[0m
+[0;32mI (605) wifi:config NVS flash: enabled[0m
+[0;32mI (605) wifi:config nano formatting: disabled[0m
+[0;32mI (615) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (615) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (615) wifi:Init management short buffer num: 32[0m
+[0;32mI (625) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (625) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (635) wifi:Init static rx buffer num: 10[0m
+[0;32mI (635) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (645) wifi_init: rx ba win: 6[0m
+[0;32mI (645) wifi_init: accept mbox: 6[0m
+[0;32mI (645) wifi_init: tcpip mbox: 32[0m
+[0;32mI (645) wifi_init: udp mbox: 6[0m
+[0;32mI (655) wifi_init: tcp mbox: 6[0m
+[0;32mI (655) wifi_init: tcp tx win: 5760[0m
+[0;32mI (655) wifi_init: tcp rx win: 5760[0m
+[0;32mI (665) wifi_init: tcp mss: 1440[0m
+[0;32mI (665) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (665) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (675) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (755) wifi:mode : sta (38:18:2b:ea:64:84)[0m
+[0;32mI (755) wifi:enable tsf[0m
+[0;32mI (765) WIFI_TASK: wifi_init_sta finished.[0m
+[0;32mI (765) WIFI_TASK: Attempting to connect to WiFi...[0m
+[0;32mI (775) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (775) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (785) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (785) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (825) wifi:connected with HOANG PHONG, aid = 15, channel 1, BW20, bssid = 58:d3:12:e8:28:47[0m
+[0;32mI (825) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (825) wifi:pm start, type: 1[0m
+
+[0;32mI (825) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (835) wifi:<ba-add>idx:0 (ifx:0, 58:d3:12:e8:28:47), tid:0, ssn:2, winSize:64[0m
+[0;32mI (895) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2375) esp_netif_handlers: sta ip: 192.168.1.17, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2375) WIFI_TASK: Got IP:192.168.1.17[0m
+[0;32mI (2375) app_main: WiFi Connected. Starting application tasks and OTA process.[0m
+[0;32mI (2375) WIFI_TASK: WiFi Connected. Task can now suspend or periodically check status.[0m
+[0;32mI (2385) SENSOR_TASK_DHT_ZORXX: Sensor Task (DHT11 - zorxx/dht) đã khởi động.[0m
+[0;32mI (2395) SENSOR_TASK_DHT_ZORXX: Sử dụng chân GPIO 4 cho DHT11.[0m
+[0;32mI (2395) SENSOR_TASK_DHT_ZORXX: Khoảng thời gian cập nhật cảm biến: 5000 ms.[0m
+[0;32mI (2435) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 28.0 C, Độ ẩm = 56.0 %[0m
+[0;32mI (2435) MQTT_TASK: MQTT Task Started. Waiting for WiFi connection...[0m
+[0;32mI (2435) MQTT_TASK: WiFi connected. Initializing MQTT client...[0m
+[0;32mI (2445) MQTT_TASK: Other event id:7[0m
+[0;32mI (2455) MQTT_TASK: MQTT Client Started. URI: mqtt://test.mosquitto.org[0m
+[0;32mI (2455) NTP_TASK: Waiting for WiFi connection to start NTP sync...[0m
+[0;32mI (2455) MQTT_TASK: MQTT Task: Received Temp = 28.0 C, Humidity = 56.0 %[0m
+[0;32mI (2465) NTP_TASK: WiFi connected. Starting NTP initialization.[0m
+[0;32mI (2455) app_main: app_main finished its setup. Tasks are running.[0m
+[0;32mI (2475) NTP_TASK: Initializing SNTP[0m
+[0;32mI (2485) NTP_TASK: Waiting for time to be set... (1/15)[0m
+[0;32mI (2485) main_task: Returned from app_main()[0m
+[0;32mI (2845) wifi:<ba-add>idx:1 (ifx:0, 58:d3:12:e8:28:47), tid:7, ssn:1, winSize:64[0m
+[0;32mI (4485) NTP_TASK: Waiting for time to be set... (2/15)[0m
+[0;32mI (6485) NTP_TASK: Waiting for time to be set... (3/15)[0m
+[0;32mI (7455) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 28.0 C, Độ ẩm = 56.0 %[0m
+[0;32mI (8485) NTP_TASK: Waiting for time to be set... (4/15)[0m
