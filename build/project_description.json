@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "freeRTOS",
-    "project_version":    "1",
+    "project_version":    "3179296-dirty",
     "project_path":       "/home/t/Desktop/DO_AN/esp/freeRTOS",
     "idf_path":           "/home/t/Desktop/DO_AN/esp/esp-idf",
     "build_dir":          "/home/t/Desktop/DO_AN/esp/freeRTOS/build",

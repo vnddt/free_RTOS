@@ -2,8 +2,8 @@
 #define APP_CONFIG_H
 
 // Cấu hình WiFi
-// #define WIFI_SSID      "SpaceX"
-#define WIFI_SSID      "HOANG PHONG"
+#define WIFI_SSID      "SpaceX"
+// #define WIFI_SSID      "HOANG PHONG"
 // #define WIFI_SSID      "TapDD"
 #define WIFI_PASSWORD  "0364429807"
 // #define WIFI_PASSWORD  "11111111"
@@ -16,9 +16,7 @@
 #define MQTT_BROKER_URL "mqtt://test.mosquitto.org" // Ví dụ: "mqtt://test.mosquitto.org"
 #define MQTT_TOPIC      "esp32/dht_data"
 
-// Cấu hình cảm biến (ví dụ cho DHT22)
-// #define DHT_SENSOR_TYPE DHT22
-// #define DHT_GPIO        GPIO_NUM_4 // Chân GPIO kết nối với cảm biến DHT
+
 
 // Kích thước hàng đợi dữ liệu cảm biến
 #define SENSOR_DATA_QUEUE_SIZE 5
@@ -37,7 +35,6 @@
 #define FIRMWARE_UPGRADE_URL "http://192.168.0.101:8000/freeRTOS.bin"
 
 #define APP_LCD_UPDATE_INTERVAL_MS 3000 // Thời gian cập nhật LCD (ms)
-#define APP_OLED_UPDATE_INTERVAL_MS 1000 // Thời gian cập nhật OLED (ms)
 #define APP_SENSOR_UPDATE_INTERVAL_MS 5000 // Thời gian cập nhật cảm biến (ms)
 
 

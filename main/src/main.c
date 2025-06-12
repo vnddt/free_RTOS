@@ -23,6 +23,17 @@ typedef struct {
     float humidity;
 } sensor_data_t;
 
+
+// Khai báo các TaskHandle_t để giám sát
+TaskHandle_t h_wifi_task = NULL;
+TaskHandle_t h_sensor_task = NULL;
+TaskHandle_t h_mqtt_task = NULL;
+TaskHandle_t h_ntp_task = NULL;
+TaskHandle_t h_lcd_task = NULL;
+TaskHandle_t h_ota_task = NULL; // Sẽ được cập nhật từ trong ota_client.c nếu cần
+
+
+
 // Khai báo QueueHandle_t toàn cục
 QueueHandle_t sensor_data_queue;
 
@@ -51,6 +62,7 @@ extern void mqtt_task(void *pvParameters);
 extern void ntp_task(void *pvParameters);
 extern void lcd_task(void *pvParameters); // Giữ comment nếu không dùng LCD đồng thời với OLED SSD1306 trên cùng chân I2C
 // extern void oled_task(void *pvParameters); // << KHAI BÁO EXTERN CHO OLED TASK
+void system_monitor_task(void *pvParameters); 
 
 
 static const char *TAG_MAIN = "app_main"; // Tag riêng cho main
@@ -120,7 +132,7 @@ void app_main() {
     }
 
     // Tạo wifi_task trước tiên để nó có thể tạo wifi_event_group và bắt đầu kết nối
-    xTaskCreate(wifi_task, "WiFi_Task", 4096, NULL, 6, NULL); // WiFi task với độ ưu tiên cao
+    xTaskCreate(wifi_task, "WiFi_Task", 4096, NULL, 6, &h_wifi_task); // WiFi task với độ ưu tiên cao
 
     ESP_LOGI(TAG_MAIN, "Waiting for WiFi connection to be established by wifi_task...");
 
@@ -145,16 +157,48 @@ void app_main() {
         if (bits & WIFI_CONNECTED_BIT) {
             ESP_LOGI(TAG_MAIN, "WiFi Connected. Starting application tasks and OTA process.");
 
-            xTaskCreate(sensor_task, "Sensor_Task", 2048, (void*)sensor_data_queue, 5, NULL);
-            xTaskCreate(mqtt_task, "MQTT_Task", 4096, (void*)sensor_data_queue, 4, NULL);
-            xTaskCreate(ntp_task, "NTP_Task", 3072, NULL, 3, NULL);
-            xTaskCreate(lcd_task, "LCD_Task", 2560, NULL, 4, NULL); // Giữ comment nếu không dùng
+            xTaskCreate(sensor_task, "Sensor_Task", 2048, (void*)sensor_data_queue, 5, &h_sensor_task);
+            xTaskCreate(mqtt_task, "MQTT_Task", 4096, (void*)sensor_data_queue, 4, &h_mqtt_task);
+            xTaskCreate(ntp_task, "NTP_Task", 3072, NULL, 3, &h_ntp_task);
+            xTaskCreate(lcd_task, "LCD_Task", 2560, NULL, 4, &h_lcd_task); 
             // ESP_LOGI(TAG_MAIN, "Attempting to start OTA firmware update...");
             // start_ota_firmware_update(FIRMWARE_UPGRADE_URL);
+            xTaskCreate(system_monitor_task, "Monitor_Task", 3072, NULL, 1, NULL);
 
         } else {
             ESP_LOGE(TAG_MAIN, "WiFi connection failed (event bit not set). Cannot start network tasks or OTA.");
         }
     }
     ESP_LOGI(TAG_MAIN, "app_main finished its setup. Tasks are running.");
+}
+
+
+
+// Tác vụ giám sát tài nguyên hệ thống
+void system_monitor_task(void *pvParameters) {
+    ESP_LOGI("MONITOR_TASK", "Bắt đầu giám sát hệ thống...");
+
+    while(1) {
+        printf("\n\n===================== SYSTEM STATUS =====================\n");
+
+        // 1. Giám sát HEAP
+        printf("Free Heap Size: %lu bytes\n", esp_get_free_heap_size());
+
+        // 2. Giám sát STACK của các Task
+        printf("Task Stack High Water Mark (bytes còn lại):\n");
+        if(h_wifi_task) printf("- WiFi_Task: %d\n", uxTaskGetStackHighWaterMark(h_wifi_task) * sizeof(StackType_t));
+        if(h_sensor_task) printf("- Sensor_Task: %d\n", uxTaskGetStackHighWaterMark(h_sensor_task) * sizeof(StackType_t));
+        if(h_mqtt_task) printf("- MQTT_Task: %d\n", uxTaskGetStackHighWaterMark(h_mqtt_task) * sizeof(StackType_t));
+        if(h_ntp_task) printf("- NTP_Task: %d\n", uxTaskGetStackHighWaterMark(h_ntp_task) * sizeof(StackType_t));
+        if(h_lcd_task) printf("- LCD_Task: %d\n", uxTaskGetStackHighWaterMark(h_lcd_task) * sizeof(StackType_t));
+        // Lưu ý: ota_task chỉ chạy khi có cập nhật, bạn cần theo dõi riêng khi test OTA
+
+        char stats_buffer[1024];
+        vTaskGetRunTimeStats(stats_buffer);
+        printf("\nTask CPU Usage:\n%s\n", stats_buffer);
+
+        printf("=========================================================\n\n");
+
+        vTaskDelay(pdMS_TO_TICKS(10000)); // 
+    }
 }
