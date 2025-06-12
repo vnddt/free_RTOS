@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader/bootloader.elf
+    add-symbol-file /home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/t/Desktop/DO_AN/esp/freeRTOS/build/freeRTOS.elf
+file /home/t/Desktop/DO_AN/esp/free_RTOS/build/freeRTOS.elf

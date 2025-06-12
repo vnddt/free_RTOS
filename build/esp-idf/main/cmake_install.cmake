@@ -1,4 +1,4 @@
-# Install script for directory: /home/t/Desktop/DO_AN/esp/freeRTOS/main
+# Install script for directory: /home/t/Desktop/DO_AN/esp/free_RTOS/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

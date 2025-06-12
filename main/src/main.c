@@ -45,13 +45,15 @@ sensor_data_t g_display_sensor_data = {0.0f, 0.0f}; // Khởi tạo giá trị b
 SemaphoreHandle_t g_display_sensor_data_mutex;
 
 // Biến toàn cục cho trạng thái OTA và Mutex bảo vệ (định nghĩa)
-ota_status_t g_ota_status = OTA_STATUS_IDLE; // << QUAN TRỌNG
-SemaphoreHandle_t g_ota_status_mutex;      // << QUAN TRỌNG
+ota_status_t g_ota_status = OTA_STATUS_IDLE; 
+SemaphoreHandle_t g_ota_status_mutex;      
 
 // Bien toan cuc luu thoi gian
 struct tm g_current_timeinfo;
 SemaphoreHandle_t g_current_time_mutex;
 bool g_time_synchronized = false; 
+
+SemaphoreHandle_t g_i2c_bus_mutex; 
 
 
 
@@ -122,6 +124,14 @@ void app_main() {
         ESP_LOGE(TAG_MAIN, "Failed to create g_ota_status_mutex. Halting.");
         while(1);
     }
+
+    g_i2c_bus_mutex = xSemaphoreCreateMutex();
+        if (g_i2c_bus_mutex == NULL) {
+            ESP_LOGE(TAG_MAIN, "Failed to create g_i2c_bus_mutex. Halting.");
+            while(1); // Dừng nếu không tạo được
+        }
+
+
 
     // Tạo hàng đợi dữ liệu cảm biến
     sensor_data_queue = xQueueCreate(SENSOR_DATA_QUEUE_SIZE, sizeof(sensor_data_t));

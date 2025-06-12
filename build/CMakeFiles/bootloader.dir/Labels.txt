@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/CMakeFiles/bootloader
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/CMakeFiles/bootloader.rule
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/CMakeFiles/bootloader-complete.rule
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-/home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/CMakeFiles/bootloader
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/CMakeFiles/bootloader.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/CMakeFiles/bootloader-complete.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

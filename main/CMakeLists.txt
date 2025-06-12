@@ -3,7 +3,7 @@ idf_component_register(SRCS "src/main.c"
                             "src/wifi_task.c"
                             "src/mqtt_task.c"
                             "src/ntp_task.c"
-                            "src/ota_client.c"
+                            "src/ota_task.c"
                             "src/lcd_task.c"
                     INCLUDE_DIRS "."
                     REQUIRES    nvs_flash       esp_wifi        esp_netif       driver 

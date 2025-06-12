@@ -1,4 +1,4 @@
-# Install script for directory: /home/t/Desktop/DO_AN/esp/freeRTOS/managed_components/zorxx__dht
+# Install script for directory: /home/t/Desktop/DO_AN/esp/free_RTOS/managed_components/zorxx__dht
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

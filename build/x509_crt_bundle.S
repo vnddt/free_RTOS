@@ -1,4 +1,4 @@
-/* * Data converted from /home/t/Desktop/DO_AN/esp/freeRTOS/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/t/Desktop/DO_AN/esp/free_RTOS/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

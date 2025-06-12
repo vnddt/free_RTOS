@@ -1,2 +1,2 @@
-source /home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader/gdbinit/symbols
-source /home/t/Desktop/DO_AN/esp/freeRTOS/build/bootloader/gdbinit/connect
+source /home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader/gdbinit/symbols
+source /home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader/gdbinit/connect

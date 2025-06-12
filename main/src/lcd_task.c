@@ -7,11 +7,10 @@
 #include "driver/i2c_master.h"
 #include <stdio.h>
 #include <string.h>
-#include <time.h> // >> MỚI: Thêm thư viện time.h
+#include <time.h>
 
 #include "inc/app_config.h"
 
-// Định nghĩa cấu trúc dữ liệu cảm biến
 typedef struct {
     float temperature;
     float humidity;
@@ -19,24 +18,20 @@ typedef struct {
 
 static const char *TAG = "LCD_TASK";
 
-// Khai báo extern cho các biến toàn cục
 extern EventGroupHandle_t wifi_event_group;
 extern sensor_data_t g_display_sensor_data;
 extern SemaphoreHandle_t g_display_sensor_data_mutex;
-// >> MỚI: Khai báo extern cho các biến thời gian
 extern struct tm g_current_timeinfo;
 extern SemaphoreHandle_t g_current_time_mutex;
 extern bool g_time_synchronized;
+extern SemaphoreHandle_t g_i2c_bus_mutex;
 
-
-// Cấu hình I2C cho LCD
 #define LCD_I2C_PORT        I2C_NUM_0
 #define LCD_I2C_SDA_PIN     GPIO_NUM_21
 #define LCD_I2C_SCL_PIN     GPIO_NUM_22
 #define LCD_I2C_MASTER_FREQ_HZ 100000
 #define LCD_I2C_ADDRESS     0x27
 
-// Các bit điều khiển trên PCF8574
 #define LCD_RS_BIT (1 << 0)
 #define LCD_RW_BIT (1 << 1)
 #define LCD_EN_BIT (1 << 2)
@@ -47,8 +42,6 @@ static uint8_t backlight_status = LCD_BL_BIT;
 static i2c_master_bus_handle_t i2c_bus_handle = NULL;
 static i2c_master_dev_handle_t i2c_dev_handle_lcd = NULL;
 
-// --- Các hàm cấp thấp để điều khiển LCD (pcf8574_write_byte, lcd_pulse_enable,...) ---
-// --- Giữ nguyên các hàm này, không thay đổi ---
 static esp_err_t pcf8574_write_byte(uint8_t data) {
     if (i2c_dev_handle_lcd == NULL) {
         ESP_LOGE(TAG, "I2C device handle for LCD is not initialized!");
@@ -63,9 +56,9 @@ static esp_err_t pcf8574_write_byte(uint8_t data) {
 
 static void lcd_pulse_enable(uint8_t data_val) {
     pcf8574_write_byte(data_val | LCD_EN_BIT);
-    vTaskDelay(pdMS_TO_TICKS(1)); 
+    vTaskDelay(pdMS_TO_TICKS(5)); 
     pcf8574_write_byte(data_val & ~LCD_EN_BIT);
-    vTaskDelay(pdMS_TO_TICKS(1)); 
+    vTaskDelay(pdMS_TO_TICKS(5)); 
 }
 
 static void lcd_send_nibble(uint8_t nibble, bool is_data_mode) {
@@ -81,10 +74,11 @@ static void lcd_send_nibble(uint8_t nibble, bool is_data_mode) {
 static void lcd_send_byte(uint8_t byte, bool is_data_mode) {
     lcd_send_nibble((byte >> 4) & 0x0F, is_data_mode);
     lcd_send_nibble(byte & 0x0F, is_data_mode);
+    vTaskDelay(pdMS_TO_TICKS(5));
 }
 
 void lcd_init_concrete() {
-    ESP_LOGI(TAG, "Initializing LCD 1602A via I2C (New API)...");
+    ESP_LOGI(TAG, "Initializing LCD 1602A via I2C...");
     i2c_master_bus_config_t i2c_mst_config = {
         .i2c_port = LCD_I2C_PORT,
         .sda_io_num = LCD_I2C_SDA_PIN,
@@ -104,16 +98,16 @@ void lcd_init_concrete() {
     };
     ESP_ERROR_CHECK(i2c_master_bus_add_device(i2c_bus_handle, &dev_cfg, &i2c_dev_handle_lcd));
 
-    pcf8574_write_byte(LCD_BL_BIT); // Bật đèn nền
+    pcf8574_write_byte(LCD_BL_BIT);
     vTaskDelay(pdMS_TO_TICKS(50)); 
     lcd_send_nibble(0x03, false); 
     vTaskDelay(pdMS_TO_TICKS(5));
     lcd_send_nibble(0x03, false);
-    vTaskDelay(pdMS_TO_TICKS(1));
+    vTaskDelay(pdMS_TO_TICKS(5));
     lcd_send_nibble(0x03, false);
-    vTaskDelay(pdMS_TO_TICKS(1));
+    vTaskDelay(pdMS_TO_TICKS(5));
     lcd_send_nibble(0x02, false); 
-    vTaskDelay(pdMS_TO_TICKS(1));
+    vTaskDelay(pdMS_TO_TICKS(5));
     lcd_send_byte(0x28, false); 
     lcd_send_byte(0x0C, false); 
     lcd_send_byte(0x01, false); 
@@ -138,8 +132,6 @@ void lcd_print_string_concrete(const char* str) {
         str++;
     }
 }
-// ---------------------------------------------------------------------------------
-
 
 void lcd_task(void *pvParameters) {
     ESP_LOGI(TAG, "LCD Task Started");
@@ -148,33 +140,31 @@ void lcd_task(void *pvParameters) {
     sensor_data_t local_sensor_data = {0.0f, 0.0f};
     char line1_buffer[17]; 
     char line2_buffer[17];
-    // >> MỚI: Thêm một buffer tạm để chứa nội dung gốc
     char content_buffer[17]; 
-
     static bool display_mode_is_wifi = true;
 
-    lcd_set_cursor_concrete(0, 0);
-    lcd_print_string_concrete("Xin chao!");
+    if (xSemaphoreTake(g_i2c_bus_mutex, pdMS_TO_TICKS(100))) {
+        lcd_set_cursor_concrete(0, 0);
+        lcd_print_string_concrete("Xin chao!");
+        xSemaphoreGive(g_i2c_bus_mutex);
+    }
     vTaskDelay(pdMS_TO_TICKS(2000));
-    lcd_clear_concrete();
+
+    if (xSemaphoreTake(g_i2c_bus_mutex, pdMS_TO_TICKS(100))) {
+        lcd_clear_concrete();
+        xSemaphoreGive(g_i2c_bus_mutex);
+    }
 
     while (1) {
-        // --- Cập nhật dòng 1: Dữ liệu cảm biến (giữ nguyên) ---
         if (xSemaphoreTake(g_display_sensor_data_mutex, pdMS_TO_TICKS(50)) == pdTRUE) {
             local_sensor_data = g_display_sensor_data;
             xSemaphoreGive(g_display_sensor_data_mutex);
         }
         snprintf(line1_buffer, sizeof(line1_buffer), "T:%.1fC H:%.1f%%",
                  local_sensor_data.temperature, local_sensor_data.humidity);
-        
-        lcd_set_cursor_concrete(0, 0);
-        lcd_print_string_concrete(line1_buffer);
 
-
-        // --- Cập nhật dòng 2: Luân phiên giữa WiFi và Thời gian ---
         if (display_mode_is_wifi) {
             bool wifi_is_connected = (wifi_event_group && (xEventGroupGetBits(wifi_event_group) & WIFI_CONNECTED_BIT));
-            // Tạo nội dung gốc vào buffer tạm
             snprintf(content_buffer, sizeof(content_buffer), "WiFi: %s",
                      wifi_is_connected ? "Online" : "Offline");
         } else {
@@ -184,25 +174,25 @@ void lcd_task(void *pvParameters) {
                     time_snapshot = g_current_timeinfo;
                     xSemaphoreGive(g_current_time_mutex);
                 }
-                // Tạo nội dung gốc vào buffer tạm
                 snprintf(content_buffer, sizeof(content_buffer), "Time: %02d:%02d:%02d",
                          time_snapshot.tm_hour, time_snapshot.tm_min, time_snapshot.tm_sec);
             } else {
-                // Tạo nội dung gốc vào buffer tạm
                 snprintf(content_buffer, sizeof(content_buffer), "Time: Not Sync");
             }
         }
-        
-        // >> THAY ĐỔI QUAN TRỌNG: Đệm chuỗi bằng khoảng trắng để đủ 16 ký tự
-        // Định dạng "%-16s" sẽ căn lề trái và chèn thêm khoảng trắng vào cuối
-        snprintf(line2_buffer, sizeof(line2_buffer), "%-16s", content_buffer);
-        
-        lcd_set_cursor_concrete(1, 0);
-        lcd_print_string_concrete(line2_buffer);
-        
-        // Đảo chế độ hiển thị cho lần lặp tiếp theo
-        display_mode_is_wifi = !display_mode_is_wifi;
 
-        vTaskDelay(pdMS_TO_TICKS(APP_LCD_UPDATE_INTERVAL_MS)); // Lấy từ app_config.h
+        snprintf(line2_buffer, sizeof(line2_buffer), "%-16s", content_buffer);
+
+        if (xSemaphoreTake(g_i2c_bus_mutex, pdMS_TO_TICKS(100))) {
+            lcd_set_cursor_concrete(0, 0);
+            lcd_print_string_concrete(line1_buffer);
+
+            lcd_set_cursor_concrete(1, 0);
+            lcd_print_string_concrete(line2_buffer);
+            xSemaphoreGive(g_i2c_bus_mutex);
+        }
+
+        display_mode_is_wifi = !display_mode_is_wifi;
+        vTaskDelay(pdMS_TO_TICKS(APP_LCD_UPDATE_INTERVAL_MS));
     }
 }
