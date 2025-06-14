@@ -1,0 +1,3122 @@
+Executing action: monitor
+Serial port /dev/ttyUSB0
+Connecting....
+Detecting chip type... Unsupported detection protocol, switching and trying again...
+Connecting......
+Detecting chip type... ESP32
+Running idf_monitor in directory /home/t/Desktop/DO_AN/esp/free_RTOS
+Executing "/home/t/.espressif/python_env/idf6.0_py3.12_env/bin/python /home/t/Desktop/DO_AN/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/t/Desktop/DO_AN/esp/free_RTOS/build/freeRTOS.elf /home/t/Desktop/DO_AN/esp/free_RTOS/build/bootloader/bootloader.elf -m '/home/t/.espressif/python_env/idf6.0_py3.12_env/bin/python' '/home/t/Desktop/DO_AN/esp/esp-idf/tools/idf.py'"...
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3822-g27d68f57e6-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 13 2025 03:51:40[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00009000[0m
+[0;32mI (66) boot:  1 otadata          OTA data         01 00 00012000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 00014000 00001000[0m
+[0;32mI (79) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00120000 00100000[0m
+[0;32mI (92) boot:  5 ota_1            OTA app          00 11 00220000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=21158h (135512) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=00041180 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=000411a8 vaddr=3ffb0000 size=03f40h ( 16192) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=000450f0 vaddr=40080000 size=0af28h ( 44840) load[0m
+[0;32mI (189) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=a5c50h (678992) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000f5c78 vaddr=4008af28 size=0da0ch ( 55820) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;32mI (465) cpu_start: Multicore app[0m
+[0;32mI (474) cpu_start: Pro cpu start user code[0m
+[0;32mI (474) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (474) app_init: Application information:[0m
+[0;32mI (474) app_init: Project name:     freeRTOS[0m
+[0;32mI (478) app_init: App version:      1834cf3-dirty[0m
+[0;32mI (482) app_init: Compile time:     Jun 13 2025 03:51:26[0m
+[0;32mI (487) app_init: ELF file SHA256:  358a4a9da...[0m
+[0;32mI (492) app_init: ESP-IDF:          v5.5-dev-3822-g27d68f57e6-dirty[0m
+[0;32mI (498) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (501) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (505) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (510) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (521) heap_init: At 3FFB8868 len 00027798 (157 KiB): DRAM[0m
+[0;32mI (526) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (531) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 40098934 len 000076CC (29 KiB): IRAM[0m
+[0;32mI (544) spi_flash: detected chip: generic[0m
+[0;32mI (546) spi_flash: flash io: dio[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (580) WIFI_MANAGER_TASK: Task Quan Ly Ket Noi da bat dau.[0m
+[0;32mI (580) app_main: Waiting for WiFi connection to be established by wifi_task...[0m
+[0;32mI (580) app_main: wifi_event_group detected. Waiting for WIFI_CONNECTED_BIT...[0m
+[0;32mI (590) wifi:wifi driver task: 3ffc2868, prio:23, stack:6656, core=0[0m
+[0;32mI (610) wifi:wifi firmware version: 2db94317f5[0m
+[0;32mI (610) wifi:wifi certification version: v7.0[0m
+[0;32mI (610) wifi:config NVS flash: enabled[0m
+[0;32mI (610) wifi:config nano formatting: disabled[0m
+[0;32mI (620) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (630) wifi:Init management short buffer num: 32[0m
+[0;32mI (630) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (630) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (640) wifi:Init static rx buffer num: 10[0m
+[0;32mI (640) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (650) wifi_init: rx ba win: 6[0m
+[0;32mI (650) wifi_init: accept mbox: 6[0m
+[0;32mI (650) wifi_init: tcpip mbox: 32[0m
+[0;32mI (650) wifi_init: udp mbox: 6[0m
+[0;32mI (660) wifi_init: tcp mbox: 6[0m
+[0;32mI (660) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (670) wifi_init: tcp mss: 1440[0m
+[0;32mI (670) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (680) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (760) wifi:mode : sta (38:18:2b:ea:64:84)[0m
+[0;32mI (770) wifi:enable tsf[0m
+[0;32mI (770) WIFI_MANAGER_TASK: wifi_init_sta hoan tat.[0m
+[0;32mI (770) WIFI_MANAGER_TASK: Che do Station da khoi dong, bat dau ket noi WiFi...[0m
+[0;32mI (780) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (780) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (790) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (800) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (810) wifi:connected with SpaceX, aid = 3, channel 1, 40U, bssid = 1c:60:de:4f:69:b6[0m
+[0;32mI (810) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (810) wifi:pm start, type: 1[0m
+
+[0;32mI (810) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (830) wifi:<ba-add>idx:0 (ifx:0, 1c:60:de:4f:69:b6), tid:0, ssn:0, winSize:64[0m
+[0;32mI (900) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1850) esp_netif_handlers: sta ip: 192.168.0.101, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1850) WIFI_MANAGER_TASK: Da ket noi WiFi va nhan duoc IP:192.168.0.101[0m
+[0;32mI (1850) app_main: WiFi Connected. Starting application tasks and OTA process.[0m
+[0;32mI (1860) SENSOR_TASK_DHT_ZORXX: Sensor Task (DHT11 - zorxx/dht) đã khởi động.[0m
+[0;32mI (1860) SENSOR_TASK_DHT_ZORXX: Sử dụng chân GPIO 4 cho DHT11.[0m
+[0;32mI (1870) SENSOR_TASK_DHT_ZORXX: Khoảng thời gian cập nhật cảm biến: 5000 ms.[0m
+[0;32mI (1900) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (1900) MQTT_TASK: MQTT Task Started. Waiting for WiFi connection...[0m
+[0;32mI (1910) MQTT_TASK: WiFi connected. Initializing MQTT client...[0m
+[0;32mI (1910) MQTT_TASK: Other event id:7[0m
+[0;32mI (1920) MQTT_TASK: MQTT Client Started. URI: mqtt://test.mosquitto.org[0m
+[0;32mI (1920) LCD_TASK: LCD Task Started[0m
+[0;32mI (1920) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (1930) wifi:I (1930) LCD_TASK: Initializing LCD 1602A via I2C...[0m
+<ba-add>idx:1 (ifx:0, 1c:60:de:4f:69:b6), tid:6, ssn:0, winSize:64
+[0;33mW (1930) MQTT_TASK: MQTT not connected. Skipping publish of: Temp 31.0C, Hum 31.0%[0m
+[0;32mI (1920) NTP_TASK: Dang cho WiFi ket noi de dong bo NTP...[0m
+[0;32mI (1960) NTP_TASK: WiFi da ket noi. Bat dau khoi tao NTP.[0m
+[0;32mI (1920) MONITOR_TASK: Bắt đầu giám sát hệ thống...[0m
+[0;32mI (1960) NTP_TASK: Initializing SNTP[0m
+[0;32mI (1970) NTP_TASK: Dang cho dong bo thoi gian... (1/15)[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 189736 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1924
+[0;32mI (1990) LCD_TASK: LCD Initialized.[0m
+- NTP_Task: 1060
+- LCD_Task: 540
+[0;32mI (1920) app_main: app_main finished its setup. Tasks are running.[0m
+
+Task CPU Usage:
+LCD_Task       	17267		1%
+main           	49001		3%
+Monitor_Task   	22437		1%
+IDLE1          	1346486		91%
+IDLE0          	1056350		72%
+NTP_Task       	18506		1%
+Sensor_Task    	46449		3%
+mqtt_task      	4944		<1%
+tiT            	12550		<1%
+WiFi_Task      	40532		2%
+Tmr Svc        	21		<1%
+ipc1           	34161		2%
+sys_evt        	6814		<1%
+MQTT_Task      	30663		2%
+wifi           	223721		15%
+esp_timer      	3111		<1%
+ipc0           	7827		<1%
+
+[0;32mI (2010) main_task: Returned from app_main()[0m
+=========================================================
+
+[0;32mI (2220) NTP_TASK: Thoi gian da dong bo: Sat Jun 14 22:38:24 2025[0m
+
+[0;32mI (2630) MQTT_TASK: MQTT_EVENT_CONNECTED[0m
+[0;32mI (3980) NTP_TASK: Dong bo thoi gian thanh cong.[0m
+[0;32mI (3980) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:38:25 2025[0m
+[0;32mI (6920) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (6920) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (6930) MQTT_TASK: Sent publish successful (queued), msg_id=4951, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (7370) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=4951[0m
+[0;32mI (11940) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (11940) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (11950) MQTT_TASK: Sent publish successful (queued), msg_id=30721, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191940 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1924
+- NTP_Task: 1060
+- LCD_Task: 540
+
+Task CPU Usage:
+Monitor_Task   	75489		<1%
+IDLE0          	10763905		93%
+IDLE1          	11264759		97%
+mqtt_task      	33604		<1%
+LCD_Task       	68954		<1%
+Sensor_Task    	97805		<1%
+NTP_Task       	21122		<1%
+tiT            	53598		<1%
+WiFi_Task      	40532		<1%
+ipc1           	34161		<1%
+sys_evt        	6814		<1%
+MQTT_Task      	56983		<1%
+esp_timer      	18390		<1%
+wifi           	445368		3%
+ipc0           	7827		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (12370) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=30721[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5-dev-3822-g27d68f57e6-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 13 2025 03:51:40[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00009000[0m
+[0;32mI (66) boot:  1 otadata          OTA data         01 00 00012000 00002000[0m
+[0;32mI (73) boot:  2 phy_init         RF data          01 01 00014000 00001000[0m
+[0;32mI (79) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (86) boot:  4 ota_0            OTA app          00 10 00120000 00100000[0m
+[0;32mI (92) boot:  5 ota_1            OTA app          00 11 00220000 00100000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (102) boot: Defaulting to factory image[0m
+[0;32mI (106) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=21158h (135512) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=00041180 vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=000411a8 vaddr=3ffb0000 size=03f40h ( 16192) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=000450f0 vaddr=40080000 size=0af28h ( 44840) load[0m
+[0;32mI (189) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=a5c50h (678992) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000f5c78 vaddr=4008af28 size=0da0ch ( 55820) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;32mI (465) cpu_start: Multicore app[0m
+[0;32mI (474) cpu_start: Pro cpu start user code[0m
+[0;32mI (474) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (474) app_init: Application information:[0m
+[0;32mI (474) app_init: Project name:     freeRTOS[0m
+[0;32mI (478) app_init: App version:      1834cf3-dirty[0m
+[0;32mI (482) app_init: Compile time:     Jun 13 2025 03:51:26[0m
+[0;32mI (487) app_init: ELF file SHA256:  358a4a9da...[0m
+[0;32mI (492) app_init: ESP-IDF:          v5.5-dev-3822-g27d68f57e6-dirty[0m
+[0;32mI (498) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (502) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (506) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (510) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (521) heap_init: At 3FFB8868 len 00027798 (157 KiB): DRAM[0m
+[0;32mI (526) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (531) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 40098934 len 000076CC (29 KiB): IRAM[0m
+[0;32mI (544) spi_flash: detected chip: generic[0m
+[0;32mI (546) spi_flash: flash io: dio[0m
+[0;32mI (550) main_task: Started on CPU0[0m
+[0;32mI (560) main_task: Calling app_main()[0m
+[0;32mI (580) WIFI_MANAGER_TASK: Task Quan Ly Ket Noi da bat dau.[0m
+[0;32mI (580) app_main: Waiting for WiFi connection to be established by wifi_task...[0m
+[0;32mI (580) app_main: wifi_event_group detected. Waiting for WIFI_CONNECTED_BIT...[0m
+[0;32mI (590) wifi:wifi driver task: 3ffc2868, prio:23, stack:6656, core=0[0m
+[0;32mI (610) wifi:wifi firmware version: 2db94317f5[0m
+[0;32mI (610) wifi:wifi certification version: v7.0[0m
+[0;32mI (610) wifi:config NVS flash: enabled[0m
+[0;32mI (610) wifi:config nano formatting: disabled[0m
+[0;32mI (620) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (620) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (630) wifi:Init management short buffer num: 32[0m
+[0;32mI (630) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (630) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (640) wifi:Init static rx buffer num: 10[0m
+[0;32mI (640) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (650) wifi_init: rx ba win: 6[0m
+[0;32mI (650) wifi_init: accept mbox: 6[0m
+[0;32mI (650) wifi_init: tcpip mbox: 32[0m
+[0;32mI (650) wifi_init: udp mbox: 6[0m
+[0;32mI (660) wifi_init: tcp mbox: 6[0m
+[0;32mI (660) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (670) wifi_init: tcp mss: 1440[0m
+[0;32mI (670) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (680) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (770) wifi:mode : sta (38:18:2b:ea:64:84)[0m
+[0;32mI (770) wifi:enable tsf[0m
+[0;32mI (770) WIFI_MANAGER_TASK: wifi_init_sta hoan tat.[0m
+[0;32mI (770) WIFI_MANAGER_TASK: Che do Station da khoi dong, bat dau ket noi WiFi...[0m
+[0;32mI (790) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (800) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (800) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (810) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (820) wifi:connected with SpaceX, aid = 3, channel 1, 40U, bssid = 1c:60:de:4f:69:b6[0m
+[0;32mI (820) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (830) wifi:pm start, type: 1[0m
+
+[0;32mI (830) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (840) wifi:<ba-add>idx:0 (ifx:0, 1c:60:de:4f:69:b6), tid:0, ssn:0, winSize:64[0m
+[0;32mI (890) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1870) esp_netif_handlers: sta ip: 192.168.0.101, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (1870) WIFI_MANAGER_TASK: Da ket noi WiFi va nhan duoc IP:192.168.0.101[0m
+[0;32mI (1870) app_main: WiFi Connected. Starting application tasks and OTA process.[0m
+[0;32mI (1880) SENSOR_TASK_DHT_ZORXX: Sensor Task (DHT11 - zorxx/dht) đã khởi động.[0m
+[0;32mI (1880) SENSOR_TASK_DHT_ZORXX: Sử dụng chân GPIO 4 cho DHT11.[0m
+[0;32mI (1890) SENSOR_TASK_DHT_ZORXX: Khoảng thời gian cập nhật cảm biến: 5000 ms.[0m
+[0;32mI (1920) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (1920) MQTT_TASK: MQTT Task Started. Waiting for WiFi connection...[0m
+[0;32mI (1930) MQTT_TASK: WiFi connected. Initializing MQTT client...[0m
+[0;32mI (1940) MQTT_TASK: Other event id:7[0m
+[0;32mI (1940) MQTT_TASK: MQTT Client Started. URI: mqtt://test.mosquitto.org[0m
+[0;32mI (1940) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (1950) wifi:<ba-add>idx:1 (ifx:0, 1c:60:de:4f:69:b6), tid:6, ssn:0, winSize:64[0m
+[0;33mW (1960) MQTT_TASK: MQTT not connected. Skipping publish of: Temp 31.0C, Hum 31.0%[0m
+[0;32mI (1960) LCD_TASK: LCD Task Started[0m
+[0;32mI (1970) LCD_TASK: Initializing LCD 1602A via I2C...[0m
+[0;32mI (1960) NTP_TASK: Dang cho WiFi ket noi de dong bo NTP...[0m
+[0;32mI (1980) NTP_TASK: WiFi da ket noi. Bat dau khoi tao NTP.[0m
+[0;32mI (1960) MONITOR_TASK: Bắt đầu giám sát hệ thống...[0m
+[0;32mI (1980) NTP_TASK: Initializing SNTP[0m
+
+
+===================== SYSTEM STATUS =====================
+[0;32mI (1990) NTP_TASK: Dang cho dong bo thoi gian... (1/15)[0m
+Free Heap Size: 189736 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+[0;32mI (1960) app_main: app_main finished its setup. Tasks are running.[0m
+
+Task CPU Usage:
+Monitor_Task   	23036		1%
+main           	49130		3%
+IDLE1          	1380780		93%
+IDLE0          	1071818		72%
+tiT            	11880		<1%
+NTP_Task       	19303		1%
+Sensor_Task    	46666		3%
+mqtt_task      	5015		<1%
+LCD_Task       	8466		<1%
+WiFi_Task      	40534		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		2%
+sys_evt        	6710		<1%
+MQTT_Task      	25855		1%
+wifi           	222311		15%
+esp_timer      	2918		<1%
+ipc0           	7830		<1%
+
+[0;32mI (2030) LCD_TASK: LCD Initialized.[0m
+=========================================================
+
+[0;32mI (2020) main_task: Returned from app_main()[0m
+[0;32mI (2280) NTP_TASK: Thoi gian da dong bo: Sat Jun 14 22:38:37 2025[0m
+
+[0;32mI (2750) MQTT_TASK: MQTT_EVENT_CONNECTED[0m
+[0;32mI (4000) NTP_TASK: Dong bo thoi gian thanh cong.[0m
+[0;32mI (4000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:38:39 2025[0m
+[0;32mI (6940) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (6940) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (6950) MQTT_TASK: Sent publish successful (queued), msg_id=29297, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (7350) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=29297[0m
+[0;32mI (11960) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (11960) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (11970) MQTT_TASK: Sent publish successful (queued), msg_id=37518, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191936 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	74505		<1%
+IDLE1          	11343779		98%
+IDLE0          	10730154		92%
+mqtt_task      	33863		<1%
+LCD_Task       	65320		<1%
+Sensor_Task    	98168		<1%
+NTP_Task       	21910		<1%
+tiT            	53610		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	52679		<1%
+esp_timer      	18024		<1%
+wifi           	440024		3%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (12360) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=37518[0m
+[0;32mI (16980) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (16980) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (16990) MQTT_TASK: Sent publish successful (queued), msg_id=62991, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (20540) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=62991[0m
+[0;32mI (22000) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (22000) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (22010) MQTT_TASK: Sent publish successful (queued), msg_id=64273, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191936 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	131373		<1%
+IDLE1          	21308234		98%
+IDLE0          	20393239		94%
+LCD_Task       	110598		<1%
+mqtt_task      	73285		<1%
+Sensor_Task    	149562		<1%
+NTP_Task       	21910		<1%
+tiT            	78586		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	79874		<1%
+esp_timer      	32427		<1%
+wifi           	652948		3%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (22400) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=64273[0m
+[0;32mI (27020) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (27020) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (27030) MQTT_TASK: Sent publish successful (queued), msg_id=8215, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (27410) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=8215[0m
+[0;32mI (32040) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (32040) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (32050) MQTT_TASK: Sent publish successful (queued), msg_id=52452, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191936 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	187348		<1%
+IDLE1          	31267262		98%
+IDLE0          	30080161		95%
+mqtt_task      	101618		<1%
+NTP_Task       	21910		<1%
+LCD_Task       	170779		<1%
+Sensor_Task    	200903		<1%
+tiT            	97686		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	106891		<1%
+esp_timer      	46412		<1%
+wifi           	851066		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (32420) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=52452[0m
+[0;32mI (34000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:39:09 2025[0m
+[0;32mI (37060) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (37060) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (37070) MQTT_TASK: Sent publish successful (queued), msg_id=50902, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (37440) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=50902[0m
+[0;32mI (42080) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (42080) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (42090) MQTT_TASK: Sent publish successful (queued), msg_id=10302, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191936 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	246158		<1%
+IDLE1          	41244682		98%
+IDLE0          	39765549		95%
+mqtt_task      	126676		<1%
+LCD_Task       	216441		<1%
+Sensor_Task    	252169		<1%
+NTP_Task       	23638		<1%
+tiT            	117813		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	134138		<1%
+wifi           	1050393		2%
+esp_timer      	60448		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (42460) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=10302[0m
+[0;32mI (47100) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (47100) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (47110) MQTT_TASK: Sent publish successful (queued), msg_id=46587, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (47460) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=46587[0m
+[0;32mI (52120) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (52120) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (52130) MQTT_TASK: Sent publish successful (queued), msg_id=59364, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191936 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	296688		<1%
+IDLE1          	51223174		98%
+IDLE0          	49456361		95%
+mqtt_task      	151480		<1%
+LCD_Task       	261822		<1%
+Sensor_Task    	303459		<1%
+NTP_Task       	23638		<1%
+tiT            	136688		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	161388		<1%
+esp_timer      	74038		<1%
+wifi           	1243300		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (52480) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=59364[0m
+[0;32mI (57140) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (57140) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (57150) MQTT_TASK: Sent publish successful (queued), msg_id=5918, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (57490) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=5918[0m
+[0;32mI (62160) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (62160) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (62170) MQTT_TASK: Sent publish successful (queued), msg_id=3587, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191936 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	354196		<1%
+IDLE1          	61184349		99%
+IDLE0          	59140446		95%
+mqtt_task      	177145		<1%
+NTP_Task       	23638		<1%
+LCD_Task       	322032		<1%
+Sensor_Task    	354730		<1%
+tiT            	156931		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	188309		<1%
+esp_timer      	88133		<1%
+wifi           	1442127		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (62610) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=3587[0m
+[0;32mI (64000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:39:39 2025[0m
+[0;32mI (67180) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (67180) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (67190) MQTT_TASK: Sent publish successful (queued), msg_id=47413, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (67620) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=47413[0m
+[0;32mI (72200) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (72200) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (72210) MQTT_TASK: Sent publish successful (queued), msg_id=53083, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191936 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	411700		<1%
+IDLE1          	71158906		99%
+IDLE0          	68808230		95%
+mqtt_task      	208872		<1%
+LCD_Task       	367169		<1%
+Sensor_Task    	406059		<1%
+NTP_Task       	25360		<1%
+tiT            	178965		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	215465		<1%
+esp_timer      	102668		<1%
+wifi           	1648642		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (72630) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=53083[0m
+[0;32mI (77220) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (77220) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (77230) MQTT_TASK: Sent publish successful (queued), msg_id=50357, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (77660) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=50357[0m
+[0;32mI (82240) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (82240) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (82250) MQTT_TASK: Sent publish successful (queued), msg_id=32896, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191956 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	466937		<1%
+IDLE1          	81136888		99%
+IDLE0          	78496429		95%
+mqtt_task      	233808		<1%
+LCD_Task       	412709		<1%
+Sensor_Task    	457300		<1%
+NTP_Task       	25360		<1%
+tiT            	197864		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	241897		<1%
+esp_timer      	116785		<1%
+wifi           	1846059		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (82670) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=32896[0m
+[0;32mI (87260) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (87260) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (87270) MQTT_TASK: Sent publish successful (queued), msg_id=33941, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (92280) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (92280) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (92290) MQTT_TASK: Sent publish successful (queued), msg_id=16504, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 190288 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+tiT            	219215		<1%
+Monitor_Task   	522177		<1%
+IDLE0          	88174621		95%
+IDLE1          	91112593		99%
+NTP_Task       	25360		<1%
+LCD_Task       	473247		<1%
+Sensor_Task    	508727		<1%
+mqtt_task      	259714		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	267276		<1%
+esp_timer      	131515		<1%
+wifi           	2047592		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (94000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:40:09 2025[0m
+[0;32mI (97300) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (97300) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (97310) MQTT_TASK: Sent publish successful (queued), msg_id=59646, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (97380) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=33941[0m
+[0;32mI (102320) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (102320) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (102330) MQTT_TASK: Sent publish successful (queued), msg_id=45667, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 190172 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	579677		<1%
+IDLE1          	101027840		99%
+IDLE0          	97914263		95%
+mqtt_task      	293414		<1%
+LCD_Task       	518818		<1%
+Sensor_Task    	560123		<1%
+NTP_Task       	27008		<1%
+tiT            	240655		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	296125		<1%
+esp_timer      	144681		<1%
+wifi           	2229432		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (106100) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=16504[0m
+[0;32mI (106120) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=59646[0m
+[0;32mI (106140) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=45667[0m
+[0;32mI (107340) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (107340) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (107350) MQTT_TASK: Sent publish successful (queued), msg_id=58342, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (107740) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=58342[0m
+[0;32mI (112360) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (112360) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (112370) MQTT_TASK: Sent publish successful (queued), msg_id=19068, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191956 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	636934		<1%
+IDLE1          	110948132		99%
+IDLE0          	107569660		96%
+mqtt_task      	376620		<1%
+LCD_Task       	565687		<1%
+Sensor_Task    	611475		<1%
+NTP_Task       	27008		<1%
+tiT            	269523		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	323774		<1%
+esp_timer      	159107		<1%
+wifi           	2444457		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (112770) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=19068[0m
+[0;32mI (117380) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (117380) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (117390) MQTT_TASK: Sent publish successful (queued), msg_id=31828, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (122400) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (122400) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (122410) MQTT_TASK: Sent publish successful (queued), msg_id=37367, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 190300 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	694697		<1%
+IDLE1          	120912809		99%
+IDLE0          	117254403		96%
+mqtt_task      	402435		<1%
+NTP_Task       	27008		<1%
+LCD_Task       	626061		<1%
+Sensor_Task    	662816		<1%
+tiT            	288487		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	352239		<1%
+esp_timer      	172884		<1%
+wifi           	2638198		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (124000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:40:39 2025[0m
+[0;32mI (124820) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=31828[0m
+[0;32mI (125650) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=37367[0m
+[0;32mI (127420) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (127420) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (127430) MQTT_TASK: Sent publish successful (queued), msg_id=45203, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (127900) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=45203[0m
+[0;32mI (132440) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (132440) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (132450) MQTT_TASK: Sent publish successful (queued), msg_id=6809, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	749760		<1%
+IDLE1          	130862133		99%
+IDLE0          	126901834		96%
+mqtt_task      	464691		<1%
+LCD_Task       	674427		<1%
+Sensor_Task    	714157		<1%
+NTP_Task       	28680		<1%
+tiT            	316998		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	379761		<1%
+esp_timer      	187694		<1%
+wifi           	2851901		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (132810) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=6809[0m
+[0;32mI (137460) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (137460) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (137470) MQTT_TASK: Sent publish successful (queued), msg_id=14604, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (137830) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=14604[0m
+[0;32mI (142480) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (142480) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (142490) MQTT_TASK: Sent publish successful (queued), msg_id=37338, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	805383		<1%
+IDLE0          	136588494		96%
+IDLE1          	140838937		99%
+mqtt_task      	489563		<1%
+LCD_Task       	720262		<1%
+Sensor_Task    	765430		<1%
+NTP_Task       	28680		<1%
+tiT            	335178		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	407549		<1%
+esp_timer      	201738		<1%
+wifi           	3052053		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (142960) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=37338[0m
+[0;32mI (147500) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (147500) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (147510) MQTT_TASK: Sent publish successful (queued), msg_id=26853, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (147850) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=26853[0m
+[0;32mI (152520) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (152520) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (152530) MQTT_TASK: Sent publish successful (queued), msg_id=24606, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	862933		<1%
+IDLE1          	150757406		99%
+IDLE0          	146333079		96%
+LCD_Task       	765553		<1%
+tiT            	353199		<1%
+NTP_Task       	28680		<1%
+Sensor_Task    	816725		<1%
+mqtt_task      	517112		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	435262		<1%
+esp_timer      	215476		<1%
+wifi           	3246611		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (152970) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=24606[0m
+[0;32mI (154000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:41:09 2025[0m
+[0;32mI (157540) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (157540) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (157550) MQTT_TASK: Sent publish successful (queued), msg_id=24690, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (157980) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=24690[0m
+[0;32mI (162560) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (162560) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (162570) MQTT_TASK: Sent publish successful (queued), msg_id=52635, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	920693		<1%
+IDLE1          	160721107		99%
+IDLE0          	156017285		96%
+mqtt_task      	544162		<1%
+LCD_Task       	825812		<1%
+Sensor_Task    	867945		<1%
+NTP_Task       	30396		<1%
+tiT            	371008		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	463048		<1%
+esp_timer      	228919		<1%
+wifi           	3441661		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (163000) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=52635[0m
+[0;32mI (167580) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (167580) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (167590) MQTT_TASK: Sent publish successful (queued), msg_id=63647, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (168010) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=63647[0m
+[0;32mI (172600) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (172600) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (172610) MQTT_TASK: Sent publish successful (queued), msg_id=15676, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	977337		<1%
+IDLE1          	170695223		99%
+IDLE0          	165710938		96%
+mqtt_task      	569020		<1%
+LCD_Task       	871431		<1%
+Sensor_Task    	919239		<1%
+NTP_Task       	30396		<1%
+tiT            	388769		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	490270		<1%
+esp_timer      	242691		<1%
+wifi           	3636722		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (173030) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=15676[0m
+[0;32mI (177620) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (177620) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (177630) MQTT_TASK: Sent publish successful (queued), msg_id=13638, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (178040) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=13638[0m
+[0;32mI (182640) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (182640) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (182650) MQTT_TASK: Sent publish successful (queued), msg_id=38207, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1032764		<1%
+IDLE1          	180653049		99%
+IDLE0          	175421954		96%
+mqtt_task      	594040		<1%
+LCD_Task       	916736		<1%
+NTP_Task       	30396		<1%
+Sensor_Task    	970667		<1%
+tiT            	407142		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	517900		<1%
+esp_timer      	256686		<1%
+wifi           	3830702		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (183180) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=38207[0m
+[0;32mI (184000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:41:39 2025[0m
+[0;32mI (187660) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (187660) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (187670) MQTT_TASK: Sent publish successful (queued), msg_id=56703, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (188080) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=56703[0m
+[0;32mI (192680) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (192680) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (192690) MQTT_TASK: Sent publish successful (queued), msg_id=11627, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1088349		<1%
+IDLE1          	190614888		99%
+IDLE0          	185090250		96%
+mqtt_task      	625413		<1%
+LCD_Task       	977063		<1%
+Sensor_Task    	1022115		<1%
+NTP_Task       	32102		<1%
+tiT            	427778		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	545544		<1%
+esp_timer      	271494		<1%
+wifi           	4037040		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (193080) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=11627[0m
+[0;32mI (197700) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (197700) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (197710) MQTT_TASK: Sent publish successful (queued), msg_id=14117, data: {"temperature":31.0, "humidity":31.0}[0m
+[0;32mI (198100) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=14117[0m
+[0;32mI (202720) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 31.0 %[0m
+[0;32mI (202720) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 31.0 %[0m
+[0;32mI (202730) MQTT_TASK: Sent publish successful (queued), msg_id=24538, data: {"temperature":31.0, "humidity":31.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1146063		<1%
+IDLE1          	200590203		99%
+IDLE0          	194780463		96%
+tiT            	445469		<1%
+LCD_Task       	1022610		<1%
+Sensor_Task    	1073437		<1%
+NTP_Task       	32102		<1%
+mqtt_task      	650679		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	573277		<1%
+esp_timer      	285115		<1%
+wifi           	4232618		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (203120) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=24538[0m
+[0;32mI (207740) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (207740) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (207750) MQTT_TASK: Sent publish successful (queued), msg_id=41235, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (208130) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=41235[0m
+[0;32mI (212760) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 55.0 %[0m
+[0;32mI (212760) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 55.0 %[0m
+[0;32mI (212770) MQTT_TASK: Sent publish successful (queued), msg_id=17457, data: {"temperature":32.0, "humidity":55.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1204092		<1%
+IDLE1          	210567800		99%
+IDLE0          	204470244		96%
+tiT            	463003		<1%
+LCD_Task       	1068268		<1%
+NTP_Task       	32102		<1%
+Sensor_Task    	1124185		<1%
+mqtt_task      	675452		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	601057		<1%
+esp_timer      	298820		<1%
+wifi           	4427013		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (213270) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=17457[0m
+[0;32mI (214000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:42:09 2025[0m
+[0;32mI (217780) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 62.0 %[0m
+[0;32mI (217780) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 62.0 %[0m
+[0;32mI (217790) MQTT_TASK: Sent publish successful (queued), msg_id=24120, data: {"temperature":32.0, "humidity":62.0}[0m
+[0;32mI (218160) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=24120[0m
+[0;32mI (222800) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 69.0 %[0m
+[0;32mI (222800) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 69.0 %[0m
+[0;32mI (222810) MQTT_TASK: Sent publish successful (queued), msg_id=28652, data: {"temperature":33.0, "humidity":69.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1261037		<1%
+IDLE1          	220524198		99%
+IDLE0          	214160014		96%
+tiT            	480498		<1%
+LCD_Task       	1129014		<1%
+Sensor_Task    	1174973		<1%
+NTP_Task       	33780		<1%
+mqtt_task      	702214		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	628817		<1%
+esp_timer      	312767		<1%
+wifi           	4624724		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (223270) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=28652[0m
+[0;32mI (227820) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 72.0 %[0m
+[0;32mI (227820) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 72.0 %[0m
+[0;32mI (227830) MQTT_TASK: Sent publish successful (queued), msg_id=15616, data: {"temperature":33.0, "humidity":72.0}[0m
+[0;32mI (228280) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=15616[0m
+[0;32mI (232840) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 74.0 %[0m
+[0;32mI (232840) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 74.0 %[0m
+[0;32mI (232850) MQTT_TASK: Sent publish successful (queued), msg_id=12185, data: {"temperature":33.0, "humidity":74.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1323554		<1%
+IDLE1          	230502215		99%
+IDLE0          	223848616		96%
+mqtt_task      	728957		<1%
+LCD_Task       	1174169		<1%
+Sensor_Task    	1225725		<1%
+NTP_Task       	33780		<1%
+tiT            	497714		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	656618		<1%
+wifi           	4821830		2%
+esp_timer      	326779		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (233300) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=12185[0m
+[0;32mI (237860) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 75.0 %[0m
+[0;32mI (237860) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 75.0 %[0m
+[0;32mI (237870) MQTT_TASK: Sent publish successful (queued), msg_id=33099, data: {"temperature":32.0, "humidity":75.0}[0m
+[0;32mI (238310) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=33099[0m
+[0;32mI (242880) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 74.0 %[0m
+[0;32mI (242880) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 74.0 %[0m
+[0;32mI (242890) MQTT_TASK: Sent publish successful (queued), msg_id=47757, data: {"temperature":32.0, "humidity":74.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1372502		<1%
+IDLE1          	240479707		99%
+IDLE0          	233533459		96%
+mqtt_task      	753880		<1%
+NTP_Task       	33780		<1%
+LCD_Task       	1219631		<1%
+Sensor_Task    	1276455		<1%
+tiT            	515646		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	684401		<1%
+esp_timer      	340870		<1%
+wifi           	5021705		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (243330) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=47757[0m
+[0;32mI (244000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:42:39 2025[0m
+[0;32mI (247900) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 73.0 %[0m
+[0;32mI (247900) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 73.0 %[0m
+[0;32mI (247910) MQTT_TASK: Sent publish successful (queued), msg_id=55363, data: {"temperature":33.0, "humidity":73.0}[0m
+[0;32mI (248350) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=55363[0m
+[0;32mI (252920) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 71.0 %[0m
+[0;32mI (252920) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 71.0 %[0m
+[0;32mI (252930) MQTT_TASK: Sent publish successful (queued), msg_id=152, data: {"temperature":33.0, "humidity":71.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1430202		<1%
+IDLE1          	250449944		99%
+IDLE0          	243201714		96%
+mqtt_task      	783836		<1%
+tiT            	536925		<1%
+Sensor_Task    	1327251		<1%
+NTP_Task       	35496		<1%
+LCD_Task       	1279866		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	711992		<1%
+esp_timer      	355189		<1%
+wifi           	5228248		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (253350) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=152[0m
+[0;32mI (257940) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 71.0 %[0m
+[0;32mI (257940) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 71.0 %[0m
+[0;32mI (257950) MQTT_TASK: Sent publish successful (queued), msg_id=4662, data: {"temperature":33.0, "humidity":71.0}[0m
+[0;32mI (258370) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=4662[0m
+[0;32mI (262960) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 34.0 C, Độ ẩm = 70.0 %[0m
+[0;32mI (262960) MQTT_TASK: MQTT Task: Received Temp = 34.0 C, Humidity = 70.0 %[0m
+[0;32mI (262970) MQTT_TASK: Sent publish successful (queued), msg_id=58306, data: {"temperature":34.0, "humidity":70.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1488222		<1%
+IDLE1          	260417430		99%
+IDLE0          	252887451		96%
+tiT            	555096		<1%
+LCD_Task       	1327054		<1%
+Sensor_Task    	1377938		<1%
+NTP_Task       	35496		<1%
+mqtt_task      	808738		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	738862		<1%
+esp_timer      	369145		<1%
+wifi           	5426604		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (263380) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=58306[0m
+[0;32mI (267980) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 69.0 %[0m
+[0;32mI (267980) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 69.0 %[0m
+[0;32mI (267990) MQTT_TASK: Sent publish successful (queued), msg_id=22324, data: {"temperature":33.0, "humidity":69.0}[0m
+[0;32mI (268400) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=22324[0m
+[0;32mI (273000) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 67.0 %[0m
+[0;32mI (273000) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 67.0 %[0m
+[0;32mI (273010) MQTT_TASK: Sent publish successful (queued), msg_id=15385, data: {"temperature":33.0, "humidity":67.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1544237		<1%
+IDLE1          	270388413		99%
+IDLE0          	262579707		96%
+tiT            	572362		<1%
+NTP_Task       	35496		<1%
+LCD_Task       	1373147		<1%
+Sensor_Task    	1428773		<1%
+mqtt_task      	836890		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	766656		<1%
+esp_timer      	382900		<1%
+wifi           	5623455		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+[0;32mI (273420) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=15385[0m
+=========================================================
+
+[0;32mI (274000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:43:09 2025[0m
+[0;32mI (278020) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 66.0 %[0m
+[0;32mI (278020) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 66.0 %[0m
+[0;32mI (278030) MQTT_TASK: Sent publish successful (queued), msg_id=56793, data: {"temperature":33.0, "humidity":66.0}[0m
+[0;32mI (278430) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=56793[0m
+[0;32mI (283040) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 33.0 C, Độ ẩm = 65.0 %[0m
+[0;32mI (283040) MQTT_TASK: MQTT Task: Received Temp = 33.0 C, Humidity = 65.0 %[0m
+[0;32mI (283050) MQTT_TASK: Sent publish successful (queued), msg_id=34078, data: {"temperature":33.0, "humidity":65.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+[0;32mI (283440) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=34078[0m
+
+Task CPU Usage:
+mqtt_task      	870069		<1%
+Monitor_Task   	1608265		<1%
+IDLE0          	272311881		96%
+IDLE1          	280345703		99%
+LCD_Task       	1418893		<1%
+Sensor_Task    	1479487		<1%
+NTP_Task       	37210		<1%
+tiT            	590545		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	794399		<1%
+esp_timer      	396983		<1%
+wifi           	5817231		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (288060) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 65.0 %[0m
+[0;32mI (288060) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 65.0 %[0m
+[0;32mI (288070) MQTT_TASK: Sent publish successful (queued), msg_id=51158, data: {"temperature":32.0, "humidity":65.0}[0m
+[0;32mI (288450) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=51158[0m
+[0;32mI (293080) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 64.0 %[0m
+[0;32mI (293080) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 64.0 %[0m
+[0;32mI (293090) MQTT_TASK: Sent publish successful (queued), msg_id=51543, data: {"temperature":32.0, "humidity":64.0}[0m
+[0;32mI (293470) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=51543[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1657708		<1%
+IDLE1          	290300848		99%
+IDLE0          	282015259		96%
+mqtt_task      	901257		<1%
+LCD_Task       	1479242		<1%
+Sensor_Task    	1529841		<1%
+NTP_Task       	37210		<1%
+tiT            	607915		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	822082		<1%
+esp_timer      	410723		<1%
+wifi           	6009951		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (298100) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 63.0 %[0m
+[0;32mI (298100) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 63.0 %[0m
+[0;32mI (298110) MQTT_TASK: Sent publish successful (queued), msg_id=42641, data: {"temperature":32.0, "humidity":63.0}[0m
+[0;32mI (298490) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=42641[0m
+[0;32mI (303120) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 62.0 %[0m
+[0;32mI (303120) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 62.0 %[0m
+[0;32mI (303130) MQTT_TASK: Sent publish successful (queued), msg_id=38960, data: {"temperature":32.0, "humidity":62.0}[0m
+[0;32mI (303500) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=38960[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1714805		<1%
+IDLE1          	300240924		99%
+IDLE0          	291743083		96%
+NTP_Task       	37210		<1%
+mqtt_task      	926813		<1%
+LCD_Task       	1524739		<1%
+Sensor_Task    	1580847		<1%
+tiT            	626883		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	849823		<1%
+esp_timer      	424350		<1%
+wifi           	6202559		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (304000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:43:39 2025[0m
+[0;32mI (308140) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 61.0 %[0m
+[0;32mI (308140) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 61.0 %[0m
+[0;32mI (308150) MQTT_TASK: Sent publish successful (queued), msg_id=56071, data: {"temperature":32.0, "humidity":61.0}[0m
+[0;32mI (308510) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=56071[0m
+[0;32mI (313160) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 60.0 %[0m
+[0;32mI (313160) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 60.0 %[0m
+[0;32mI (313170) MQTT_TASK: Sent publish successful (queued), msg_id=25232, data: {"temperature":32.0, "humidity":60.0}[0m
+[0;32mI (313530) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=25232[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1768201		<1%
+IDLE1          	310215849		99%
+IDLE0          	301428146		96%
+LCD_Task       	1570246		<1%
+mqtt_task      	956115		<1%
+Sensor_Task    	1631653		<1%
+NTP_Task       	39420		<1%
+tiT            	645654		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	877482		<1%
+wifi           	6400735		2%
+esp_timer      	438535		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (318180) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 59.0 %[0m
+[0;32mI (318180) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 59.0 %[0m
+[0;32mI (318190) MQTT_TASK: Sent publish successful (queued), msg_id=62754, data: {"temperature":32.0, "humidity":59.0}[0m
+[0;32mI (318540) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=62754[0m
+[0;32mI (323200) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 58.0 %[0m
+[0;32mI (323200) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 58.0 %[0m
+[0;32mI (323210) MQTT_TASK: Sent publish successful (queued), msg_id=34122, data: {"temperature":32.0, "humidity":58.0}[0m
+[0;32mI (323560) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=34122[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1829660		<1%
+IDLE1          	320142821		99%
+IDLE0          	311152298		96%
+mqtt_task      	981104		<1%
+LCD_Task       	1630368		<1%
+Sensor_Task    	1682426		<1%
+NTP_Task       	39420		<1%
+tiT            	663027		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	905251		<1%
+esp_timer      	452405		<1%
+wifi           	6599030		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (328220) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 57.0 %[0m
+[0;32mI (328220) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 57.0 %[0m
+[0;32mI (328230) MQTT_TASK: Sent publish successful (queued), msg_id=30348, data: {"temperature":32.0, "humidity":57.0}[0m
+[0;32mI (328680) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=30348[0m
+[0;32mI (333240) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 56.0 %[0m
+[0;32mI (333240) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 56.0 %[0m
+[0;32mI (333250) MQTT_TASK: Sent publish successful (queued), msg_id=32666, data: {"temperature":32.0, "humidity":56.0}[0m
+[0;32mI (333690) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=32666[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1881859		<1%
+IDLE1          	330119047		99%
+IDLE0          	320844298		96%
+NTP_Task       	39420		<1%
+mqtt_task      	1007877		<1%
+LCD_Task       	1675278		<1%
+Sensor_Task    	1733063		<1%
+tiT            	680313		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	933012		<1%
+esp_timer      	465961		<1%
+wifi           	6791908		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (334000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:44:09 2025[0m
+[0;32mI (338260) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 32.0 C, Độ ẩm = 55.0 %[0m
+[0;32mI (338260) MQTT_TASK: MQTT Task: Received Temp = 32.0 C, Humidity = 55.0 %[0m
+[0;32mI (338270) MQTT_TASK: Sent publish successful (queued), msg_id=32030, data: {"temperature":32.0, "humidity":55.0}[0m
+[0;32mI (338700) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=32030[0m
+[0;32mI (343280) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 54.0 %[0m
+[0;32mI (343280) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 54.0 %[0m
+[0;32mI (343290) MQTT_TASK: Sent publish successful (queued), msg_id=57920, data: {"temperature":31.0, "humidity":54.0}[0m
+[0;32mI (343720) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=57920[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193648 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1938149		<1%
+IDLE1          	340094724		99%
+IDLE0          	330536151		96%
+LCD_Task       	1720781		<1%
+mqtt_task      	1033022		<1%
+Sensor_Task    	1784031		<1%
+NTP_Task       	41118		<1%
+tiT            	697472		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	960745		<1%
+esp_timer      	479919		<1%
+wifi           	6985924		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (348300) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 52.0 %[0m
+[0;32mI (348300) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 52.0 %[0m
+[0;32mI (348310) MQTT_TASK: Sent publish successful (queued), msg_id=49976, data: {"temperature":31.0, "humidity":52.0}[0m
+[0;32mI (348730) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=49976[0m
+[0;32mI (353320) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 51.0 %[0m
+[0;32mI (353320) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 51.0 %[0m
+[0;32mI (353330) MQTT_TASK: Sent publish successful (queued), msg_id=63932, data: {"temperature":31.0, "humidity":51.0}[0m
+[0;32mI (353740) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=63932[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	1993828		<1%
+IDLE1          	350029761		99%
+IDLE0          	340250261		96%
+mqtt_task      	1057939		<1%
+LCD_Task       	1781388		<1%
+Sensor_Task    	1835193		<1%
+NTP_Task       	41118		<1%
+tiT            	716737		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	988475		<1%
+esp_timer      	493856		<1%
+wifi           	7183480		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (358340) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 50.0 %[0m
+[0;32mI (358340) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 50.0 %[0m
+[0;32mI (358350) MQTT_TASK: Sent publish successful (queued), msg_id=24620, data: {"temperature":31.0, "humidity":50.0}[0m
+[0;32mI (358760) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=24620[0m
+[0;32mI (363360) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 47.0 %[0m
+[0;32mI (363360) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 47.0 %[0m
+[0;32mI (363370) MQTT_TASK: Sent publish successful (queued), msg_id=2880, data: {"temperature":31.0, "humidity":47.0}[0m
+[0;32mI (363780) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=2880[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2048863		<1%
+IDLE1          	360003063		99%
+IDLE0          	349944022		96%
+tiT            	735273		<1%
+mqtt_task      	1083664		<1%
+LCD_Task       	1826577		<1%
+Sensor_Task    	1886360		<1%
+NTP_Task       	41118		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1016139		<1%
+wifi           	7378954		2%
+esp_timer      	508003		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (364000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:44:39 2025[0m
+[0;32mI (368380) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 45.0 %[0m
+[0;32mI (368380) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 45.0 %[0m
+[0;32mI (368390) MQTT_TASK: Sent publish successful (queued), msg_id=38049, data: {"temperature":31.0, "humidity":45.0}[0m
+[0;32mI (368790) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=38049[0m
+[0;32mI (373400) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 44.0 %[0m
+[0;32mI (373400) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 44.0 %[0m
+[0;32mI (373410) MQTT_TASK: Sent publish successful (queued), msg_id=23170, data: {"temperature":31.0, "humidity":44.0}[0m
+[0;32mI (373800) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=23170[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2104115		<1%
+IDLE1          	369977966		99%
+IDLE0          	359623819		96%
+LCD_Task       	1872416		<1%
+mqtt_task      	1113426		<1%
+Sensor_Task    	1937472		<1%
+NTP_Task       	42674		<1%
+tiT            	754742		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1043590		<1%
+esp_timer      	522331		<1%
+wifi           	7579703		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (378420) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 43.0 %[0m
+[0;32mI (378420) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 43.0 %[0m
+[0;32mI (378430) MQTT_TASK: Sent publish successful (queued), msg_id=32123, data: {"temperature":31.0, "humidity":43.0}[0m
+[0;32mI (378810) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=32123[0m
+[0;32mI (383440) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 43.0 %[0m
+[0;32mI (383440) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 43.0 %[0m
+[0;32mI (383450) MQTT_TASK: Sent publish successful (queued), msg_id=33956, data: {"temperature":31.0, "humidity":43.0}[0m
+[0;32mI (383830) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=33956[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2162297		<1%
+IDLE1          	379941483		99%
+IDLE0          	369313060		96%
+mqtt_task      	1138836		<1%
+LCD_Task       	1933365		<1%
+Sensor_Task    	1988515		<1%
+NTP_Task       	42674		<1%
+tiT            	771701		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1071383		<1%
+esp_timer      	535935		<1%
+wifi           	7772791		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (388460) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 42.0 %[0m
+[0;32mI (388460) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 42.0 %[0m
+[0;32mI (388470) MQTT_TASK: Sent publish successful (queued), msg_id=46766, data: {"temperature":31.0, "humidity":42.0}[0m
+[0;32mI (388840) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=46766[0m
+[0;32mI (393480) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 41.0 %[0m
+[0;32mI (393480) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 41.0 %[0m
+[0;32mI (393490) MQTT_TASK: Sent publish successful (queued), msg_id=45759, data: {"temperature":31.0, "humidity":41.0}[0m
+[0;32mI (393860) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=45759[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+[0;32mI (394000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:45:09 2025[0m
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2221044		<1%
+IDLE0          	379011941		96%
+IDLE1          	389918757		99%
+mqtt_task      	1163722		<1%
+LCD_Task       	1978236		<1%
+Sensor_Task    	2039372		<1%
+NTP_Task       	46310		<1%
+tiT            	788272		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	1099204		<1%
+esp_timer      	549592		<1%
+wifi           	7968510		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (398500) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 40.0 %[0m
+[0;32mI (398500) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 40.0 %[0m
+[0;32mI (398510) MQTT_TASK: Sent publish successful (queued), msg_id=65024, data: {"temperature":31.0, "humidity":40.0}[0m
+[0;32mI (398980) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=65024[0m
+[0;32mI (403520) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 40.0 %[0m
+[0;32mI (403520) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 40.0 %[0m
+[0;32mI (403530) MQTT_TASK: Sent publish successful (queued), msg_id=8924, data: {"temperature":31.0, "humidity":40.0}[0m
+[0;32mI (403890) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=8924[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2282063		<1%
+IDLE1          	399842020		99%
+IDLE0          	388752382		96%
+mqtt_task      	1190693		<1%
+LCD_Task       	2023553		<1%
+Sensor_Task    	2090272		<1%
+NTP_Task       	46310		<1%
+tiT            	807011		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1126862		<1%
+esp_timer      	563519		<1%
+wifi           	8167351		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (408540) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 39.0 %[0m
+[0;32mI (408540) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 39.0 %[0m
+[0;32mI (408550) MQTT_TASK: Sent publish successful (queued), msg_id=19039, data: {"temperature":31.0, "humidity":39.0}[0m
+[0;32mI (408900) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=19039[0m
+[0;32mI (413560) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 38.0 %[0m
+[0;32mI (413560) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 38.0 %[0m
+[0;32mI (413570) MQTT_TASK: Sent publish successful (queued), msg_id=45686, data: {"temperature":31.0, "humidity":38.0}[0m
+[0;32mI (414050) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=45686[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193520 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2341915		<1%
+IDLE1          	409817958		99%
+IDLE0          	398446903		96%
+tiT            	823314		<1%
+mqtt_task      	1217610		<1%
+Sensor_Task    	2141214		<1%
+NTP_Task       	46310		<1%
+LCD_Task       	2068836		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1154594		<1%
+esp_timer      	577288		<1%
+wifi           	8363079		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (418580) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 37.0 %[0m
+[0;32mI (418580) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 37.0 %[0m
+[0;32mI (418590) MQTT_TASK: Sent publish successful (queued), msg_id=64623, data: {"temperature":31.0, "humidity":37.0}[0m
+[0;32mI (419030) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=64623[0m
+[0;32mI (423600) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 37.0 %[0m
+[0;32mI (423600) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 37.0 %[0m
+[0;32mI (423610) MQTT_TASK: Sent publish successful (queued), msg_id=23844, data: {"temperature":31.0, "humidity":37.0}[0m
+[0;32mI (424000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:45:39 2025[0m
+[0;32mI (424050) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=23844[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2393117		<1%
+IDLE1          	419780191		99%
+IDLE0          	408130761		96%
+mqtt_task      	1243272		<1%
+LCD_Task       	2129359		<1%
+Sensor_Task    	2191999		<1%
+NTP_Task       	48002		<1%
+tiT            	841409		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1182323		<1%
+esp_timer      	591233		<1%
+wifi           	8560370		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (428620) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 36.0 %[0m
+[0;32mI (428620) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 36.0 %[0m
+[0;32mI (428630) MQTT_TASK: Sent publish successful (queued), msg_id=31669, data: {"temperature":31.0, "humidity":36.0}[0m
+[0;32mI (429080) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=31669[0m
+[0;32mI (433640) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 36.0 %[0m
+[0;32mI (433640) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 36.0 %[0m
+[0;32mI (433650) MQTT_TASK: Sent publish successful (queued), msg_id=43370, data: {"temperature":31.0, "humidity":36.0}[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 191976 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2451283		<1%
+IDLE1          	429756062		99%
+IDLE0          	417812720		96%
+mqtt_task      	1268619		<1%
+LCD_Task       	2175284		<1%
+Sensor_Task    	2242811		<1%
+NTP_Task       	48002		<1%
+tiT            	860417		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	1210037		<1%
+esp_timer      	605170		<1%
+wifi           	8761631		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (435170) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=43370[0m
+[0;32mI (438660) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 36.0 %[0m
+[0;32mI (438660) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 36.0 %[0m
+[0;32mI (438670) MQTT_TASK: Sent publish successful (queued), msg_id=36687, data: {"temperature":31.0, "humidity":36.0}[0m
+[0;32mI (440830) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=36687[0m
+[0;32mI (443680) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 36.0 %[0m
+[0;32mI (443680) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 36.0 %[0m
+[0;32mI (443690) MQTT_TASK: Sent publish successful (queued), msg_id=6360, data: {"temperature":31.0, "humidity":36.0}[0m
+[0;32mI (444110) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=6360[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2509481		<1%
+IDLE1          	439726585		99%
+IDLE0          	427489133		96%
+LCD_Task       	2220612		<1%
+mqtt_task      	1303966		<1%
+Sensor_Task    	2293580		<1%
+NTP_Task       	48002		<1%
+tiT            	880714		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1237587		<1%
+esp_timer      	619445		<1%
+wifi           	8962931		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (448700) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 35.0 %[0m
+[0;32mI (448700) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 35.0 %[0m
+[0;32mI (448710) MQTT_TASK: Sent publish successful (queued), msg_id=22366, data: {"temperature":31.0, "humidity":35.0}[0m
+[0;32mI (449120) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=22366[0m
+[0;32mI (453720) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 35.0 %[0m
+[0;32mI (453720) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 35.0 %[0m
+[0;32mI (453730) MQTT_TASK: Sent publish successful (queued), msg_id=36358, data: {"temperature":31.0, "humidity":35.0}[0m
+[0;32mI (454000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:46:09 2025[0m
+[0;32mI (454130) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=36358[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2566867		<1%
+IDLE1          	449662282		99%
+IDLE0          	437200074		96%
+mqtt_task      	1329141		<1%
+LCD_Task       	2281071		<1%
+Sensor_Task    	2344523		<1%
+NTP_Task       	49684		<1%
+tiT            	899879		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1265349		<1%
+esp_timer      	633445		<1%
+wifi           	9159721		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (458740) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 35.0 %[0m
+[0;32mI (458740) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 35.0 %[0m
+[0;32mI (458750) MQTT_TASK: Sent publish successful (queued), msg_id=35991, data: {"temperature":31.0, "humidity":35.0}[0m
+[0;32mI (459150) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=35991[0m
+[0;32mI (463760) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 35.0 %[0m
+[0;32mI (463760) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 35.0 %[0m
+[0;32mI (463770) MQTT_TASK: Sent publish successful (queued), msg_id=12053, data: {"temperature":31.0, "humidity":35.0}[0m
+[0;32mI (464160) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=12053[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2622598		<1%
+IDLE0          	446894543		96%
+IDLE1          	459640505		99%
+mqtt_task      	1353999		<1%
+LCD_Task       	2326124		<1%
+Sensor_Task    	2395439		<1%
+NTP_Task       	49684		<1%
+tiT            	916966		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1293127		<1%
+esp_timer      	647503		<1%
+wifi           	9353537		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (468780) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 34.0 %[0m
+[0;32mI (468780) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 34.0 %[0m
+[0;32mI (468790) MQTT_TASK: Sent publish successful (queued), msg_id=55673, data: {"temperature":31.0, "humidity":34.0}[0m
+[0;32mI (469180) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=55673[0m
+[0;32mI (473800) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 34.0 %[0m
+[0;32mI (473800) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 34.0 %[0m
+[0;32mI (473810) MQTT_TASK: Sent publish successful (queued), msg_id=44576, data: {"temperature":31.0, "humidity":34.0}[0m
+[0;32mI (474190) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=44576[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2680020		<1%
+IDLE1          	469560797		99%
+IDLE0          	456641840		96%
+LCD_Task       	2371570		<1%
+mqtt_task      	1378906		<1%
+Sensor_Task    	2446168		<1%
+NTP_Task       	49684		<1%
+tiT            	934009		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	1320833		<1%
+esp_timer      	661041		<1%
+wifi           	9547168		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (478820) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 34.0 %[0m
+[0;32mI (478820) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 34.0 %[0m
+[0;32mI (478830) MQTT_TASK: Sent publish successful (queued), msg_id=40008, data: {"temperature":31.0, "humidity":34.0}[0m
+[0;32mI (479200) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=40008[0m
+[0;32mI (483840) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 34.0 %[0m
+[0;32mI (483840) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 34.0 %[0m
+[0;32mI (483850) MQTT_TASK: Sent publish successful (queued), msg_id=44510, data: {"temperature":31.0, "humidity":34.0}[0m
+[0;32mI (484000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:46:39 2025[0m
+[0;32mI (484220) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=44510[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2738222		<1%
+IDLE1          	479524622		99%
+IDLE0          	466323656		96%
+mqtt_task      	1404032		<1%
+LCD_Task       	2432123		<1%
+Sensor_Task    	2496871		<1%
+NTP_Task       	51344		<1%
+tiT            	951530		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1348601		<1%
+esp_timer      	675121		<1%
+wifi           	9745914		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (488860) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 34.0 %[0m
+[0;32mI (488860) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 34.0 %[0m
+[0;32mI (488870) MQTT_TASK: Sent publish successful (queued), msg_id=43017, data: {"temperature":31.0, "humidity":34.0}[0m
+[0;32mI (489230) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=43017[0m
+[0;32mI (493880) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 34.0 %[0m
+[0;32mI (493880) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 34.0 %[0m
+[0;32mI (493890) MQTT_TASK: Sent publish successful (queued), msg_id=49124, data: {"temperature":31.0, "humidity":34.0}[0m
+[0;32mI (494250) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=49124[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2795280		<1%
+IDLE1          	489496705		99%
+IDLE0          	476006406		96%
+mqtt_task      	1433399		<1%
+LCD_Task       	2477582		<1%
+Sensor_Task    	2547577		<1%
+NTP_Task       	51344		<1%
+tiT            	971258		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1376357		<1%
+esp_timer      	689393		<1%
+wifi           	9946735		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (498900) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 34.0 %[0m
+[0;32mI (498900) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 34.0 %[0m
+[0;32mI (498910) MQTT_TASK: Sent publish successful (queued), msg_id=58563, data: {"temperature":31.0, "humidity":34.0}[0m
+[0;32mI (499260) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=58563[0m
+[0;32mI (503920) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 34.0 %[0m
+[0;32mI (503920) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 34.0 %[0m
+[0;32mI (503930) MQTT_TASK: Sent publish successful (queued), msg_id=6511, data: {"temperature":31.0, "humidity":34.0}[0m
+[0;32mI (504280) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=6511[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2850945		<1%
+IDLE1          	499474399		99%
+IDLE0          	485702205		96%
+mqtt_task      	1458304		<1%
+LCD_Task       	2522770		<1%
+Sensor_Task    	2598259		<1%
+NTP_Task       	51344		<1%
+tiT            	988362		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1403909		<1%
+esp_timer      	702725		<1%
+wifi           	10138815		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (508940) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (508940) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (508950) MQTT_TASK: Sent publish successful (queued), msg_id=40552, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (509390) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=40552[0m
+[0;32mI (513960) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (513960) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (513970) MQTT_TASK: Sent publish successful (queued), msg_id=54318, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (514000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:47:09 2025[0m
+[0;32mI (514400) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=54318[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2906530		<1%
+IDLE1          	509435940		99%
+IDLE0          	495388828		96%
+mqtt_task      	1485045		<1%
+LCD_Task       	2583568		<1%
+Sensor_Task    	2648852		<1%
+NTP_Task       	52951		<1%
+tiT            	1005966		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	1431677		<1%
+esp_timer      	716621		<1%
+wifi           	10336059		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (518980) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (518980) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (518990) MQTT_TASK: Sent publish successful (queued), msg_id=34423, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (519420) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=34423[0m
+[0;32mI (524000) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (524000) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (524010) MQTT_TASK: Sent publish successful (queued), msg_id=28067, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (524430) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=28067[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	2964902		<1%
+IDLE1          	519413951		99%
+IDLE0          	505077448		96%
+mqtt_task      	1509920		<1%
+LCD_Task       	2628612		<1%
+Sensor_Task    	2699452		<1%
+NTP_Task       	52951		<1%
+tiT            	1022770		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1459427		<1%
+esp_timer      	730405		<1%
+wifi           	10532198		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (529020) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (529020) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (529030) MQTT_TASK: Sent publish successful (queued), msg_id=34912, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (529450) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=34912[0m
+[0;32mI (534040) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (534040) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (534050) MQTT_TASK: Sent publish successful (queued), msg_id=43011, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (534460) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=43011[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3023274		<1%
+IDLE1          	529391200		99%
+IDLE0          	514766859		96%
+mqtt_task      	1534848		<1%
+LCD_Task       	2674120		<1%
+Sensor_Task    	2750138		<1%
+NTP_Task       	52951		<1%
+tiT            	1039907		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1487193		<1%
+esp_timer      	744286		<1%
+wifi           	10727260		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (539060) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (539060) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (539070) MQTT_TASK: Sent publish successful (queued), msg_id=2225, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (539480) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=2225[0m
+[0;32mI (544000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:47:39 2025[0m
+[0;32mI (544080) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (544080) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (544090) MQTT_TASK: Sent publish successful (queued), msg_id=32946, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (544500) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=32946[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3080918		<1%
+IDLE1          	539358971		99%
+IDLE0          	524466566		96%
+LCD_Task       	2719464		<1%
+mqtt_task      	1560373		<1%
+Sensor_Task    	2800571		<1%
+NTP_Task       	54667		<1%
+tiT            	1057819		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1514809		<1%
+esp_timer      	758319		<1%
+wifi           	10919559		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (549100) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (549100) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (549110) MQTT_TASK: Sent publish successful (queued), msg_id=32167, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (549510) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=32167[0m
+[0;32mI (554120) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (554120) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (554130) MQTT_TASK: Sent publish successful (queued), msg_id=21092, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (554520) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=21092[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3143632		<1%
+IDLE1          	549321320		99%
+IDLE0          	534145630		96%
+mqtt_task      	1590067		<1%
+LCD_Task       	2780368		<1%
+Sensor_Task    	2851328		<1%
+NTP_Task       	54667		<1%
+tiT            	1078470		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	1542600		<1%
+wifi           	11119659		2%
+esp_timer      	772540		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (559140) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (559140) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (559150) MQTT_TASK: Sent publish successful (queued), msg_id=51569, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (559530) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=51569[0m
+[0;32mI (564160) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (564160) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (564170) MQTT_TASK: Sent publish successful (queued), msg_id=60483, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (564550) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=60483[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3192882		<1%
+IDLE1          	559298945		99%
+IDLE0          	543840550		96%
+mqtt_task      	1614885		<1%
+LCD_Task       	2825610		<1%
+Sensor_Task    	2901953		<1%
+NTP_Task       	54667		<1%
+tiT            	1095239		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1570369		<1%
+esp_timer      	785754		<1%
+wifi           	11311183		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (569180) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (569180) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (569190) MQTT_TASK: Sent publish successful (queued), msg_id=45078, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (569660) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=45078[0m
+[0;32mI (574000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:48:09 2025[0m
+[0;32mI (574200) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (574200) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (574210) MQTT_TASK: Sent publish successful (queued), msg_id=21369, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (574680) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=21369[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3251262		<1%
+IDLE1          	569276496		99%
+IDLE0          	553527441		96%
+LCD_Task       	2871075		<1%
+mqtt_task      	1641777		<1%
+Sensor_Task    	2952375		<1%
+NTP_Task       	56377		<1%
+tiT            	1112012		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1598191		<1%
+esp_timer      	799440		<1%
+wifi           	11505591		2%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (579220) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (579220) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (579230) MQTT_TASK: Sent publish successful (queued), msg_id=51913, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (579590) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=51913[0m
+[0;32mI (584240) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (584240) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (584250) MQTT_TASK: Sent publish successful (queued), msg_id=18605, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (584730) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=18605[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3309638		<1%
+IDLE1          	579237949		99%
+IDLE0          	563214927		96%
+mqtt_task      	1668696		<1%
+LCD_Task       	2931355		<1%
+Sensor_Task    	3002980		<1%
+NTP_Task       	56377		<1%
+tiT            	1128923		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1625912		<1%
+esp_timer      	813179		<1%
+wifi           	11702100		2%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (589260) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (589260) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (589270) MQTT_TASK: Sent publish successful (queued), msg_id=5527, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (589720) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=5527[0m
+[0;32mI (594280) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (594280) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (594290) MQTT_TASK: Sent publish successful (queued), msg_id=57899, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (594730) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=57899[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3365743		<1%
+IDLE1          	589213498		99%
+IDLE0          	572909735		96%
+mqtt_task      	1693849		<1%
+LCD_Task       	2976501		<1%
+Sensor_Task    	3053576		<1%
+NTP_Task       	56377		<1%
+tiT            	1145986		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	1653503		<1%
+esp_timer      	827009		<1%
+wifi           	11896259		2%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (599300) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (599300) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (599310) MQTT_TASK: Sent publish successful (queued), msg_id=62380, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (599750) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=62380[0m
+[0;32mI (604000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:48:39 2025[0m
+[0;32mI (604320) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (604320) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (604330) MQTT_TASK: Sent publish successful (queued), msg_id=56839, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (604760) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=56839[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3428079		<1%
+IDLE1          	599188664		99%
+IDLE0          	582601684		96%
+LCD_Task       	3021981		<1%
+mqtt_task      	1719108		<1%
+Sensor_Task    	3104033		<1%
+NTP_Task       	58101		<1%
+tiT            	1163462		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1681228		<1%
+esp_timer      	841332		<1%
+wifi           	12092978		2%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (609340) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (609340) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (609350) MQTT_TASK: Sent publish successful (queued), msg_id=30356, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (609780) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=30356[0m
+[0;32mI (614360) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (614360) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (614370) MQTT_TASK: Sent publish successful (queued), msg_id=14793, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (614790) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=14793[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 192084 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3477781		<1%
+IDLE1          	609103593		99%
+IDLE0          	592342315		96%
+mqtt_task      	1745550		<1%
+LCD_Task       	3082965		<1%
+Sensor_Task    	3154634		<1%
+NTP_Task       	58101		<1%
+tiT            	1180875		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1708944		<1%
+esp_timer      	854712		<1%
+wifi           	12282566		1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (619380) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (619380) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (619390) MQTT_TASK: Sent publish successful (queued), msg_id=42580, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (619810) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=42580[0m
+[0;32mI (624400) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (624400) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (624410) MQTT_TASK: Sent publish successful (queued), msg_id=4487, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (624830) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=4487[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3536165		<1%
+IDLE1          	619079674		99%
+IDLE0          	602023604		96%
+mqtt_task      	1773958		<1%
+LCD_Task       	3127968		<1%
+Sensor_Task    	3205346		<1%
+NTP_Task       	58101		<1%
+tiT            	1199602		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1736560		<1%
+wifi           	12482322		1%
+esp_timer      	868736		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (629420) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (629420) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (629430) MQTT_TASK: Sent publish successful (queued), msg_id=12874, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (629840) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=12874[0m
+[0;32mI (634000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:49:09 2025[0m
+[0;32mI (634440) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (634440) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (634450) MQTT_TASK: Sent publish successful (queued), msg_id=34709, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (634850) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=34709[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3594541		<1%
+IDLE1          	629055222		99%
+IDLE0          	611716151		96%
+mqtt_task      	1799202		<1%
+LCD_Task       	3173610		<1%
+Sensor_Task    	3255935		<1%
+NTP_Task       	59811		<1%
+tiT            	1216546		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	1764286		<1%
+esp_timer      	882445		<1%
+wifi           	12674287		1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (639460) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (639460) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (639470) MQTT_TASK: Sent publish successful (queued), msg_id=43358, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (639870) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=43358[0m
+[0;32mI (644480) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (644480) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (644490) MQTT_TASK: Sent publish successful (queued), msg_id=25560, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (644880) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=25560[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3652473		<1%
+IDLE1          	639004802		99%
+IDLE0          	621422065		96%
+mqtt_task      	1824080		<1%
+LCD_Task       	3234180		<1%
+Sensor_Task    	3306684		<1%
+NTP_Task       	59811		<1%
+tiT            	1233624		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1791931		<1%
+esp_timer      	896195		<1%
+wifi           	12866192		1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (649500) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (649500) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (649510) MQTT_TASK: Sent publish successful (queued), msg_id=52706, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (649900) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=52706[0m
+[0;32mI (654520) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (654520) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (654530) MQTT_TASK: Sent publish successful (queued), msg_id=58307, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (654910) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=58307[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3712713		<1%
+IDLE1          	648981454		99%
+IDLE0          	631110159		96%
+mqtt_task      	1849169		<1%
+LCD_Task       	3279038		<1%
+Sensor_Task    	3357232		<1%
+NTP_Task       	59811		<1%
+tiT            	1251493		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1819683		<1%
+esp_timer      	910212		<1%
+wifi           	13066623		1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (659540) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (659540) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (659550) MQTT_TASK: Sent publish successful (queued), msg_id=56835, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (659920) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=56835[0m
+[0;32mI (664000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:49:39 2025[0m
+[0;32mI (664560) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (664560) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (664570) MQTT_TASK: Sent publish successful (queued), msg_id=39083, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (664930) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=39083[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3765494		<1%
+IDLE1          	658911325		99%
+IDLE0          	640839388		96%
+mqtt_task      	1874471		<1%
+LCD_Task       	3324598		<1%
+Sensor_Task    	3407670		<1%
+NTP_Task       	61527		<1%
+tiT            	1269888		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1847396		<1%
+esp_timer      	924237		<1%
+wifi           	13266042		1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+
+[0;32mI (669580) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (669580) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (669590) MQTT_TASK: Sent publish successful (queued), msg_id=34172, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (669950) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=34172[0m
+[0;32mI (674600) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (674600) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (674610) MQTT_TASK: Sent publish successful (queued), msg_id=15724, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (675070) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=15724[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3823870		<1%
+IDLE1          	668887138		99%
+IDLE0          	650531774		96%
+LCD_Task       	3369895		<1%
+mqtt_task      	1901166		<1%
+Sensor_Task    	3458266		<1%
+NTP_Task       	61527		<1%
+tiT            	1286482		<1%
+WiFi_Task      	40534		<1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+MQTT_Task      	1875109		<1%
+esp_timer      	937745		<1%
+wifi           	13459064		1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+
+=========================================================
+
+[0;32mI (679620) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (679620) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (679630) MQTT_TASK: Sent publish successful (queued), msg_id=63327, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (680080) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=63327[0m
+[0;32mI (684640) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (684640) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (684650) MQTT_TASK: Sent publish successful (queued), msg_id=15373, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (685090) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=15373[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3881087		<1%
+IDLE1          	678850747		99%
+IDLE0          	660206543		96%
+mqtt_task      	1930811		<1%
+LCD_Task       	3430473		<1%
+Sensor_Task    	3508904		<1%
+NTP_Task       	61527		<1%
+tiT            	1305702		<1%
+WiFi_Task      	40534		<1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+MQTT_Task      	1902881		<1%
+esp_timer      	952064		<1%
+wifi           	13661297		1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+
+=========================================================
+
+[0;32mI (689660) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (689660) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (689670) MQTT_TASK: Sent publish successful (queued), msg_id=17861, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (690110) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=17861[0m
+[0;32mI (694000) NTP_TASK: Thoi gian hien tai: Sun Jun 15 05:50:09 2025[0m
+[0;32mI (694680) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (694680) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (694690) MQTT_TASK: Sent publish successful (queued), msg_id=12474, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (695120) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=12474[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3938079		<1%
+IDLE1          	688810769		99%
+IDLE0          	669912111		96%
+mqtt_task      	1955778		<1%
+LCD_Task       	3475943		<1%
+Sensor_Task    	3559418		<1%
+NTP_Task       	63218		<1%
+tiT            	1322418		<1%
+WiFi_Task      	40534		<1%
+ipc1           	34164		<1%
+sys_evt        	6710		<1%
+MQTT_Task      	1930657		<1%
+esp_timer      	965887		<1%
+wifi           	13857758		1%
+ipc0           	7830		<1%
+Tmr Svc        	21		<1%
+
+=========================================================
+
+[0;32mI (699700) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (699700) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (699710) MQTT_TASK: Sent publish successful (queued), msg_id=42331, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (700140) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=42331[0m
+[0;32mI (704720) SENSOR_TASK_DHT_ZORXX: zorxx/dht: Cảm biến DHT11: Nhiệt độ = 31.0 C, Độ ẩm = 33.0 %[0m
+[0;32mI (704720) MQTT_TASK: MQTT Task: Received Temp = 31.0 C, Humidity = 33.0 %[0m
+[0;32mI (704730) MQTT_TASK: Sent publish successful (queued), msg_id=19449, data: {"temperature":31.0, "humidity":33.0}[0m
+[0;32mI (705150) MQTT_TASK: MQTT_EVENT_PUBLISHED, msg_id=19449[0m
+
+
+===================== SYSTEM STATUS =====================
+Free Heap Size: 193644 bytes
+Task Stack High Water Mark (bytes còn lại):
+- WiFi_Task: 1552
+- Sensor_Task: 200
+- MQTT_Task: 1892
+- NTP_Task: 1060
+- LCD_Task: 528
+
+Task CPU Usage:
+Monitor_Task   	3996760		<1%
+IDLE1          	698750835		99%
+IDLE0          	679640878		96%
+LCD_Task       	3521347		<1%
+mqtt_task      	1980637		<1%
+Sensor_Task    	3610015		<1%
+NTP_Task       	63218		<1%
+tiT            	1338917		<1%
+WiFi_Task      	40534		<1%
+sys_evt        	6710		<1%
+ipc0           	7830		<1%
+MQTT_Task      	1958429		<1%
+esp_timer      	979825		<1%
+wifi           	14054032		1%
+Tmr Svc        	21		<1%
+ipc1           	34164		<1%
+
+=========================================================
+

@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h> // Cho strlen, sprintf
 #include <stdbool.h> // << THÊM: Cho kiểu bool
+#include <time.h> // Để sử dụng struct tm
 
 #include "esp_log.h"
 #include "mqtt_client.h" // Thư viện MQTT client của ESP-IDF
@@ -95,10 +96,71 @@ static void mqtt_app_start(void) {
     ESP_LOGI(TAG, "MQTT Client Started. URI: %s", MQTT_BROKER_URL);
 }
 
+// void mqtt_task(void *pvParameters) {
+//     QueueHandle_t data_queue = (QueueHandle_t)pvParameters;
+//     sensor_data_t received_data;
+//     char json_payload[100];
+
+//     ESP_LOGI(TAG, "MQTT Task Started. Waiting for WiFi connection...");
+
+//     EventBits_t bits = xEventGroupWaitBits(wifi_event_group,
+//                                            WIFI_CONNECTED_BIT,
+//                                            pdFALSE,
+//                                            pdFALSE,
+//                                            portMAX_DELAY);
+
+//     if (bits & WIFI_CONNECTED_BIT) {
+//         ESP_LOGI(TAG, "WiFi connected. Initializing MQTT client...");
+//         mqtt_app_start();
+//     } else {
+//         ESP_LOGE(TAG, "WiFi connection failed. MQTT task cannot start.");
+//         vTaskDelete(NULL);
+//         return;
+//     }
+
+//     while (1) {
+//         if (xQueueReceive(data_queue, &received_data, portMAX_DELAY) == pdPASS) {
+//             ESP_LOGI(TAG, "MQTT Task: Received Temp = %.1f C, Humidity = %.1f %%",
+//                      received_data.temperature, received_data.humidity);
+
+//             // Cập nhật biến toàn cục cho LCD, bảo vệ bằng mutex
+//             if (g_display_sensor_data_mutex != NULL && xSemaphoreTake(g_display_sensor_data_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
+//                 g_display_sensor_data = received_data;
+//                 xSemaphoreGive(g_display_sensor_data_mutex);
+//                 ESP_LOGD(TAG, "Updated global display_sensor_data for LCD.");
+//             } else {
+//                 ESP_LOGW(TAG, "Failed to take g_display_sensor_data_mutex in MQTT task.");
+//             }
+
+//             // << SỬA ĐỔI: Kiểm tra trạng thái kết nối trước khi publish
+//             if (client != NULL && mqtt_da_ket_noi) {
+//                 snprintf(json_payload, sizeof(json_payload),
+//                          "{\"temperature\":%.1f, \"humidity\":%.1f}",
+//                          received_data.temperature, received_data.humidity);
+
+//                 int msg_id = esp_mqtt_client_publish(client, MQTT_TOPIC, json_payload, 0, 1, 0);
+//                 if (msg_id != -1) {
+//                     ESP_LOGI(TAG, "Sent publish successful (queued), msg_id=%d, data: %s", msg_id, json_payload);
+//                 } else {
+//                     ESP_LOGE(TAG, "Failed to queue publish message. MQTT client might be disconnected or an error occurred.");
+//                 }
+//             } else {
+//                 if (client == NULL) {
+//                      ESP_LOGE(TAG, "MQTT client not initialized! Cannot publish.");
+//                 } else { // client không NULL, nhưng mqtt_da_ket_noi là false
+//                      ESP_LOGW(TAG, "MQTT not connected. Skipping publish of: Temp %.1fC, Hum %.1f%%", received_data.temperature, received_data.humidity);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+
 void mqtt_task(void *pvParameters) {
     QueueHandle_t data_queue = (QueueHandle_t)pvParameters;
     sensor_data_t received_data;
-    char json_payload[100];
+    char json_payload[200]; 
 
     ESP_LOGI(TAG, "MQTT Task Started. Waiting for WiFi connection...");
 
@@ -122,7 +184,6 @@ void mqtt_task(void *pvParameters) {
             ESP_LOGI(TAG, "MQTT Task: Received Temp = %.1f C, Humidity = %.1f %%",
                      received_data.temperature, received_data.humidity);
 
-            // Cập nhật biến toàn cục cho LCD, bảo vệ bằng mutex
             if (g_display_sensor_data_mutex != NULL && xSemaphoreTake(g_display_sensor_data_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
                 g_display_sensor_data = received_data;
                 xSemaphoreGive(g_display_sensor_data_mutex);
@@ -131,11 +192,19 @@ void mqtt_task(void *pvParameters) {
                 ESP_LOGW(TAG, "Failed to take g_display_sensor_data_mutex in MQTT task.");
             }
 
-            // << SỬA ĐỔI: Kiểm tra trạng thái kết nối trước khi publish
             if (client != NULL && mqtt_da_ket_noi) {
+                // Thêm thời gian vào payload
+                time_t now;
+                struct tm timeinfo;
+                char time_str[64];
+
+                time(&now);
+                localtime_r(&now, &timeinfo);
+                strftime(time_str, sizeof(time_str), "%Y-%m-%d %H:%M:%S", &timeinfo);
+
                 snprintf(json_payload, sizeof(json_payload),
-                         "{\"temperature\":%.1f, \"humidity\":%.1f}",
-                         received_data.temperature, received_data.humidity);
+                         "{\"temperature\":%.1f, \"humidity\":%.1f, \"timestamp\":\"%s\"}",
+                         received_data.temperature, received_data.humidity, time_str);
 
                 int msg_id = esp_mqtt_client_publish(client, MQTT_TOPIC, json_payload, 0, 1, 0);
                 if (msg_id != -1) {
@@ -145,9 +214,9 @@ void mqtt_task(void *pvParameters) {
                 }
             } else {
                 if (client == NULL) {
-                     ESP_LOGE(TAG, "MQTT client not initialized! Cannot publish.");
-                } else { // client không NULL, nhưng mqtt_da_ket_noi là false
-                     ESP_LOGW(TAG, "MQTT not connected. Skipping publish of: Temp %.1fC, Hum %.1f%%", received_data.temperature, received_data.humidity);
+                    ESP_LOGE(TAG, "MQTT client not initialized! Cannot publish.");
+                } else {
+                    ESP_LOGW(TAG, "MQTT not connected. Skipping publish of: Temp %.1fC, Hum %.1f%%", received_data.temperature, received_data.humidity);
                 }
             }
         }
